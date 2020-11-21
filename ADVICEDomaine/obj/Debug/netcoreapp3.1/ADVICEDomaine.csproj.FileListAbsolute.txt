@@ -1,0 +1,8 @@
+D:\HAITHEM\source\repo\ADVICENetCore\ADVICEDomaine\bin\Debug\netcoreapp3.1\ADVICEDomaine.deps.json
+D:\HAITHEM\source\repo\ADVICENetCore\ADVICEDomaine\bin\Debug\netcoreapp3.1\ADVICEDomaine.dll
+D:\HAITHEM\source\repo\ADVICENetCore\ADVICEDomaine\bin\Debug\netcoreapp3.1\ADVICEDomaine.pdb
+D:\HAITHEM\source\repo\ADVICENetCore\ADVICEDomaine\obj\Debug\netcoreapp3.1\ADVICEDomaine.csprojAssemblyReference.cache
+D:\HAITHEM\source\repo\ADVICENetCore\ADVICEDomaine\obj\Debug\netcoreapp3.1\ADVICEDomaine.AssemblyInfoInputs.cache
+D:\HAITHEM\source\repo\ADVICENetCore\ADVICEDomaine\obj\Debug\netcoreapp3.1\ADVICEDomaine.AssemblyInfo.cs
+D:\HAITHEM\source\repo\ADVICENetCore\ADVICEDomaine\obj\Debug\netcoreapp3.1\ADVICEDomaine.dll
+D:\HAITHEM\source\repo\ADVICENetCore\ADVICEDomaine\obj\Debug\netcoreapp3.1\ADVICEDomaine.pdb

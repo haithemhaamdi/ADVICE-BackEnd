@@ -1,0 +1,52 @@
+USE [ARTIPERSONNEL_SOC001]
+GO
+
+/****** Object:  Table [dbo].[USER]    Script Date: 04/10/2020 12:55:42 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[USER](
+	[CodeEmploye] [varchar](10) NOT NULL,
+	[Login] [varchar](50) NULL,
+	[Password] [nvarchar](max) NULL,
+	[Connections] [int] NOT NULL,
+	[MacAddress] [nvarchar](max) NULL,
+	[CreateDate] [date] NULL,
+	[ModifyDate] [date] NULL,
+	[Status] [bit] NOT NULL,
+	[CodeRole] [varchar](10) NOT NULL,
+ CONSTRAINT [PK_USER] PRIMARY KEY CLUSTERED 
+(
+	[CodeEmploye] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+ALTER TABLE [dbo].[EMPLOYE]  WITH NOCHECK ADD  CONSTRAINT [FK_EMPLOYE] FOREIGN KEY([CodeEmploye])
+REFERENCES [dbo].[EMPLOYE] ([CodeEmploye]) 
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+GO
+
+
+ALTER TABLE [dbo].[USER]  WITH NOCHECK ADD  CONSTRAINT [FK_USER_ROLE] FOREIGN KEY([CodeRole])
+REFERENCES [dbo].[ROLE] ([CodeRole])
+GO
+
+ALTER TABLE [dbo].[USER] CHECK CONSTRAINT [FK_USER_ROLE]
+GO
+
+
+
+

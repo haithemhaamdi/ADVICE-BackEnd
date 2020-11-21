@@ -1,0 +1,2 @@
+﻿Install-Package Microsoft.AspNetCore.Authentication.MicrosoftAccount -Version 3.1.0
+Install-Package Microsoft.Extensions.Hosting.Abstractions -Version 5.0.0

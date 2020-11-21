@@ -1,0 +1,26 @@
+{
+    "codeEmploye": "EMP000003",
+    "login": "MASALWA",
+    "password": "1003MASALWASOC001",
+    "connections": 0,
+    "macAddress": "41.51.17.30",
+    "createDate": "2020-10-05",
+    "modifyDate": "2020-10-05",
+    "status": true,
+    "codeRole": "R003",
+    "codeEmployeNavigation": null,
+    "codeRoleNavigation": null
+},
+{
+    "codeEmploye": "EMP000004",
+    "login": "BABMAHMOUD",
+    "password": "1004BABMAHMOUDSOC001",
+    "connections": 0,
+    "macAddress": "41.51.17.31",
+    "createDate": "2020-10-05",
+    "modifyDate": "2020-10-05",
+    "status": true,
+    "codeRole": "R004",
+    "codeEmployeNavigation": null,
+    "codeRoleNavigation": null
+}

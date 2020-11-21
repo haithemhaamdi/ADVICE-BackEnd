@@ -1,0 +1,458 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICE.NetCore\\ADVICE.NetCore.csproj": {}
+  },
+  "projects": {
+    "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICE.NetCore\\ADVICE.NetCore.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICE.NetCore\\ADVICE.NetCore.csproj",
+        "projectName": "ADVICE.NetCore",
+        "projectPath": "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICE.NetCore\\ADVICE.NetCore.csproj",
+        "packagesPath": "C:\\Users\\HAITHEM\\.nuget\\packages\\",
+        "outputPath": "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICE.NetCore\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\HAITHEM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEData\\ADVICEData.csproj": {
+                "projectPath": "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEData\\ADVICEData.csproj"
+              },
+              "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEDomaine\\ADVICEDomaine.csproj": {
+                "projectPath": "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEDomaine\\ADVICEDomaine.csproj"
+              },
+              "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEDto\\ADVICEDto.csproj": {
+                "projectPath": "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEDto\\ADVICEDto.csproj"
+              },
+              "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEService\\ADVICEService.csproj": {
+                "projectPath": "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEService\\ADVICEService.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "NLog.Web": {
+              "target": "Package",
+              "version": "[4.9.3, )"
+            },
+            "NLog.Web.AspNetCore": {
+              "target": "Package",
+              "version": "[4.9.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEData\\ADVICEData.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEData\\ADVICEData.csproj",
+        "projectName": "ADVICEData",
+        "projectPath": "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEData\\ADVICEData.csproj",
+        "packagesPath": "C:\\Users\\HAITHEM\\.nuget\\packages\\",
+        "outputPath": "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEData\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\HAITHEM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEDomaine\\ADVICEDomaine.csproj": {
+                "projectPath": "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEDomaine\\ADVICEDomaine.csproj"
+              },
+              "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEDto\\ADVICEDto.csproj": {
+                "projectPath": "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEDto\\ADVICEDto.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "MailKit": {
+              "target": "Package",
+              "version": "[2.9.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Authorization": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "NLog": {
+              "target": "Package",
+              "version": "[4.7.5, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.12.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.8.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEDomaine\\ADVICEDomaine.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEDomaine\\ADVICEDomaine.csproj",
+        "projectName": "ADVICEDomaine",
+        "projectPath": "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEDomaine\\ADVICEDomaine.csproj",
+        "packagesPath": "C:\\Users\\HAITHEM\\.nuget\\packages\\",
+        "outputPath": "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEDomaine\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\HAITHEM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Authorization": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEDto\\ADVICEDto.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEDto\\ADVICEDto.csproj",
+        "projectName": "ADVICEDto",
+        "projectPath": "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEDto\\ADVICEDto.csproj",
+        "packagesPath": "C:\\Users\\HAITHEM\\.nuget\\packages\\",
+        "outputPath": "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEDto\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\HAITHEM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEDomaine\\ADVICEDomaine.csproj": {
+                "projectPath": "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEDomaine\\ADVICEDomaine.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEService\\ADVICEService.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEService\\ADVICEService.csproj",
+        "projectName": "ADVICEService",
+        "projectPath": "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEService\\ADVICEService.csproj",
+        "packagesPath": "C:\\Users\\HAITHEM\\.nuget\\packages\\",
+        "outputPath": "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEService\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\HAITHEM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEData\\ADVICEData.csproj": {
+                "projectPath": "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEData\\ADVICEData.csproj"
+              },
+              "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEDomaine\\ADVICEDomaine.csproj": {
+                "projectPath": "D:\\HAITHEM\\source\\repo\\ADVICENetCore\\ADVICEDomaine\\ADVICEDomaine.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.Core": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.MicrosoftAccount": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
