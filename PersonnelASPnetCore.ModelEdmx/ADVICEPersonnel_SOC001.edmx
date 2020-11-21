@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ARTIPERSONNEL_SOC001Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ARTIPERSONNEL_SOC001Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ACTIVITE">
           <Key>
             <PropertyRef Name="CodeActivite" />
@@ -3400,8 +3400,7 @@ warning 6013: The table/view 'ARTIPERSONNEL_SOC001.dbo.Vue_SPOT' does not have a
             <End Role="VIREMENT_DETAIL" EntitySet="VIREMENT_DETAIL" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ARTIPERSONNEL_SOC001Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -6024,7 +6023,7 @@ warning 6013: The table/view 'ARTIPERSONNEL_SOC001.dbo.Vue_SPOT' does not have a
             <Parameter Name="Trimestre" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="PROC_CALCUL_DECLARATION_EMPLOYEUR">
-            <Parameter Name="Annee" Mode="In" Type="Int32" />
+          <Parameter Name="Annee" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="PROC_CALCUL_DECLARATION_MENSUEL_IMPOT">
             <Parameter Name="TauxTFP" Mode="In" Type="Int32" />
@@ -6038,16 +6037,16 @@ warning 6013: The table/view 'ARTIPERSONNEL_SOC001.dbo.Vue_SPOT' does not have a
             <Parameter Name="LimiteMonnaie" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="PROC_CALCUL_FICHE_ANNUELLE_PAIE">
-            <Parameter Name="Annee" Mode="In" Type="Int32" />
+          <Parameter Name="Annee" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="PROC_CALCUL_SITUATION_CONGE">
-            <Parameter Name="Annee" Mode="In" Type="Int32" />
+          <Parameter Name="Annee" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="PROC_CALCUL_SITUATION_CONGE_SPECIAL">
-            <Parameter Name="Annee" Mode="In" Type="Int32" />
+          <Parameter Name="Annee" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="PROC_CHECK_ISACTIVE_TOKEN">
-            <Parameter Name="RevokeAll" Mode="In" Type="Boolean" />
+          <Parameter Name="RevokeAll" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="PROC_CONNECTIONS_HISTORY">
             <Parameter Name="Id" Mode="In" Type="Int32" />
@@ -6190,13 +6189,13 @@ warning 6013: The table/view 'ARTIPERSONNEL_SOC001.dbo.Vue_SPOT' does not have a
             <Parameter Name="IpAddress" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="PROC_DELETE_BULLETIN_PAIE">
-            <Parameter Name="NumeroBulletin" Mode="In" Type="String" />
+          <Parameter Name="NumeroBulletin" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="PROC_DELETE_EMPLOYE">
-            <Parameter Name="CodeEmp" Mode="In" Type="String" />
+          <Parameter Name="CodeEmp" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="PROC_DELETE_USER">
-            <Parameter Name="CodeUser" Mode="In" Type="String" />
+          <Parameter Name="CodeUser" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="PROC_GET_BULLETIN_PAIE_DETAILSByNumero" ReturnType="Collection(ARTIPERSONNEL_SOC001Model.PROC_GET_BULLETIN_PAIE_DETAILSByNumero_Result)">
             <Parameter Name="NumeroBulletin" Mode="In" Type="String" />
@@ -6207,30 +6206,30 @@ warning 6013: The table/view 'ARTIPERSONNEL_SOC001.dbo.Vue_SPOT' does not have a
             <Parameter Name="isActive" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="PROC_GET_USER_ROLE" ReturnType="Collection(String)">
-            <Parameter Name="CodeEmploye" Mode="In" Type="String" />
+          <Parameter Name="CodeEmploye" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="PROC_GET_USERByID" ReturnType="Collection(ARTIPERSONNEL_SOC001Model.PROC_GET_USERByID_Result)">
-            <Parameter Name="CodeUser" Mode="In" Type="String" />
+          <Parameter Name="CodeUser" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="PROC_GetUSER_WithToken_Ref" ReturnType="Collection(ARTIPERSONNEL_SOC001Model.PROC_GetUSER_WithToken_Ref_Result)">
-            <Parameter Name="Username" Mode="In" Type="String" />
+          <Parameter Name="Username" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="PROC_INCREMENT_CONNECTION_USER">
             <Parameter Name="CodeUser" Mode="In" Type="String" />
             <Parameter Name="Connections" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="PROC_SELECT_BULLETIN_PAIE_ByNumero" ReturnType="Collection(ARTIPERSONNEL_SOC001Model.PROC_SELECT_BULLETIN_PAIE_ByNumero_Result)">
-            <Parameter Name="NumeroBulletin" Mode="In" Type="String" />
+          <Parameter Name="NumeroBulletin" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="PROC_SELECT_BULLETINS_PAIE" ReturnType="Collection(ARTIPERSONNEL_SOC001Model.PROC_SELECT_BULLETINS_PAIE_Result)" />
           <FunctionImport Name="PROC_SELECT_EMPLOYE" ReturnType="Collection(ARTIPERSONNEL_SOC001Model.PROC_SELECT_EMPLOYE_Result)" />
           <FunctionImport Name="PROC_SELECT_EMPLOYEbyCode" ReturnType="Collection(ARTIPERSONNEL_SOC001Model.PROC_SELECT_EMPLOYEbyCode_Result)">
-            <Parameter Name="CodeEmp" Mode="In" Type="String" />
+          <Parameter Name="CodeEmp" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="PROC_SELECT_ROLE" ReturnType="Collection(ARTIPERSONNEL_SOC001Model.PROC_SELECT_ROLE_Result)" />
           <FunctionImport Name="PROC_SELECT_USER" ReturnType="Collection(ARTIPERSONNEL_SOC001Model.PROC_SELECT_USER_Result)" />
           <FunctionImport Name="PROC_SELECT_USERbyCode" ReturnType="Collection(ARTIPERSONNEL_SOC001Model.PROC_SELECT_USERbyCode_Result)">
-            <Parameter Name="CodeUser" Mode="In" Type="String" />
+          <Parameter Name="CodeUser" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="PROC_UPDATE_BulletinPaie">
             <Parameter Name="NumeroBulletin" Mode="In" Type="String" />
