@@ -1,0 +1,11 @@
+D:\HAITHEM\source\repo\_ADVICE\PersonnelASPnetCore.Dto\bin\Debug\netcoreapp3.1\PersonnelASPnetCore.Dto.deps.json
+D:\HAITHEM\source\repo\_ADVICE\PersonnelASPnetCore.Dto\bin\Debug\netcoreapp3.1\PersonnelASPnetCore.Dto.dll
+D:\HAITHEM\source\repo\_ADVICE\PersonnelASPnetCore.Dto\bin\Debug\netcoreapp3.1\PersonnelASPnetCore.Dto.pdb
+D:\HAITHEM\source\repo\_ADVICE\PersonnelASPnetCore.Dto\bin\Debug\netcoreapp3.1\PersonnelASPnetCore.Domaine.dll
+D:\HAITHEM\source\repo\_ADVICE\PersonnelASPnetCore.Dto\bin\Debug\netcoreapp3.1\PersonnelASPnetCore.Domaine.pdb
+D:\HAITHEM\source\repo\_ADVICE\PersonnelASPnetCore.Dto\obj\Debug\netcoreapp3.1\PersonnelASPnetCore.Dto.csprojAssemblyReference.cache
+D:\HAITHEM\source\repo\_ADVICE\PersonnelASPnetCore.Dto\obj\Debug\netcoreapp3.1\PersonnelASPnetCore.Dto.AssemblyInfoInputs.cache
+D:\HAITHEM\source\repo\_ADVICE\PersonnelASPnetCore.Dto\obj\Debug\netcoreapp3.1\PersonnelASPnetCore.Dto.AssemblyInfo.cs
+D:\HAITHEM\source\repo\_ADVICE\PersonnelASPnetCore.Dto\obj\Debug\netcoreapp3.1\PersonnelASPnetCore.Dto.csproj.CopyComplete
+D:\HAITHEM\source\repo\_ADVICE\PersonnelASPnetCore.Dto\obj\Debug\netcoreapp3.1\PersonnelASPnetCore.Dto.dll
+D:\HAITHEM\source\repo\_ADVICE\PersonnelASPnetCore.Dto\obj\Debug\netcoreapp3.1\PersonnelASPnetCore.Dto.pdb

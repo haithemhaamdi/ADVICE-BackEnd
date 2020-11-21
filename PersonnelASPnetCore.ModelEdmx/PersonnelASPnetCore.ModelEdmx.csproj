@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DB08F7B3-418D-49D1-A123-3ABA1E293DDA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PersonnelASPnetCore.ModelEdmx</RootNamespace>
+    <AssemblyName>PersonnelASPnetCore.ModelEdmx</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ACTIVITE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADVICEPersonnel_SOC001.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ADVICEPersonnel_SOC001.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADVICEPersonnel_SOC001.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADVICEPersonnel_SOC001.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ADVICEPersonnel_SOC001.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="APPELLATION.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AVANCEMENT.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AVANCEMENT_DETAIL.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BANQUE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BANQUE_VIREMENT.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAREME_IMPOT.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BAREME_SMIG.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BORDEREAU.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BULLETIN_PAIE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BULLETIN_PAIE_DETAIL.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMPTE_COMPTABLE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONNECTIONS_HISTORY.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DECLARATION_CNSS.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DECLARATION_CNSS_DETAIL.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DECLARATION_CNSS_TAUX_EMPLOYEUR.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DECLARATION_EMPLOYEUR.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DECOMPTE_MONNAIE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DEPARTEMENT.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ECRITURE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ECRITURE_DETAIL.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ECRITURE_OUVERTURE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EMPLOYE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EMPLOYE_ABSENCE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EMPLOYE_AFFICHAGE_GRILLE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EMPLOYE_AJUSTEMENT_CONGE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EMPLOYE_AVANCE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EMPLOYE_A_CHARGE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EMPLOYE_CONGE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EMPLOYE_CONTRAT.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EMPLOYE_CORRESPONDANCE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EMPLOYE_DEDUCTION.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EMPLOYE_DISCIPLINE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EMPLOYE_DOCUMENT.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EMPLOYE_FORMATION.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EMPLOYE_OBSERVATION.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EMPLOYE_PRET.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EMPLOYE_RUBRIQUE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EMPLOYE_VENTILATION.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FONCTION.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Grand_Livre.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GRILLE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GRILLE_DETAIL.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IMP_CAVIS.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IMP_DECLARATION_ASSURANCE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IMP_FICHE_ANNUELLE_PAIE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JOURNAL_COMPTABLE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JOUR_FERIE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LISTE_RAPPORT.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODELE_CORRESPONDANCE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODELE_PAIE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODELE_PAIE_DETAIL.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODE_PAIEMENT.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NATURE_PAIEMENT.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PARAMETRE_COMPTABILITE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PARAMETRE_POINTAGE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PLAN_PAIE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PLAN_PAIE_DETAIL.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POINTAGE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROC_GetUSER_WithToken_Ref_Result.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROC_GET_BULLETIN_PAIE_DETAILSByNumero_Result.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROC_GET_USERByID_Result.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROC_SELECT_BULLETINS_PAIE_Result.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROC_SELECT_BULLETIN_PAIE_ByNumero_Result.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROC_SELECT_EMPLOYEbyCode_Result.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROC_SELECT_EMPLOYE_Result.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROC_SELECT_ROLE_Result.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROC_SELECT_USERbyCode_Result.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROC_SELECT_USER_Result.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="REFRESH_TOKEN.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ROLE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RUBRIQUE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEQUENCE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SITE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SITUATION_CONGE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SITUATION_CONGE_SPECIAL.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TYPE_CONTRAT.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TYPE_INDEMNITE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TYPE_PERIODE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TYPE_PRET.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TYPE_RUBRIQUE.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USER.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VIREMENT.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VIREMENT_DETAIL.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vue_CubeAnalysePaie.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vue_CubeAnalysePersonnel.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vue_Dossier_Employe.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vue_Employe.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vue_Mouvement_Conge.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vue_Mouvement_Conge_Special.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vue_SituationPret.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vue_SoldeActuel_Conge.cs">
+      <DependentUpon>ADVICEPersonnel_SOC001.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="ADVICEPersonnel_SOC001.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ADVICEPersonnel_SOC001.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ADVICEPersonnel_SOC001.edmx.diagram">
+      <DependentUpon>ADVICEPersonnel_SOC001.edmx</DependentUpon>
+    </None>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ADVICEPersonnel_SOC001.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ADVICEPersonnel_SOC001.edmx</DependentUpon>
+      <LastGenOutput>ADVICEPersonnel_SOC001.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADVICEPersonnel_SOC001.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ADVICEPersonnel_SOC001.edmx</DependentUpon>
+      <LastGenOutput>ADVICEPersonnel_SOC001.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

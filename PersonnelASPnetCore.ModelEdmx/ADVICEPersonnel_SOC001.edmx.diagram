@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="54e69e694db24061a016a42dab920f19" Name="Diagram1" ZoomLevel="92">
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.ACTIVITE" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.APPELLATION" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.AVANCEMENT" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.AVANCEMENT_DETAIL" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.BANQUE" Width="1.5" PointX="3.75" PointY="41.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.BANQUE_VIREMENT" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.BAREME_IMPOT" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.BAREME_SMIG" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.BORDEREAU" Width="1.5" PointX="3" PointY="49" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.BULLETIN_PAIE" Width="1.5" PointX="6" PointY="45.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.BULLETIN_PAIE_DETAIL" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.COMPTE_COMPTABLE" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.CONNECTIONS_HISTORY" Width="1.5" PointX="16.5" PointY="45.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.DECLARATION_CNSS" Width="1.5" PointX="6.75" PointY="58.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.DECLARATION_CNSS_DETAIL" Width="1.5" PointX="9" PointY="48.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.DECLARATION_CNSS_TAUX_EMPLOYEUR" Width="1.5" PointX="3" PointY="43.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.DEPARTEMENT" Width="1.5" PointX="3.75" PointY="38.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.ECRITURE" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.ECRITURE_DETAIL" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.ECRITURE_OUVERTURE" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.EMPLOYE" Width="1.5" PointX="0.75" PointY="43.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.EMPLOYE_A_CHARGE" Width="1.5" PointX="3" PointY="52.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.EMPLOYE_ABSENCE" Width="1.5" PointX="3" PointY="56.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.EMPLOYE_AFFICHAGE_GRILLE" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.EMPLOYE_AJUSTEMENT_CONGE" Width="1.5" PointX="3" PointY="60.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.EMPLOYE_AVANCE" Width="1.5" PointX="3" PointY="64.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.EMPLOYE_CONGE" Width="1.5" PointX="3" PointY="67.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.EMPLOYE_CONTRAT" Width="1.5" PointX="9" PointY="44.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.EMPLOYE_CORRESPONDANCE" Width="1.5" PointX="9" PointY="54.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.EMPLOYE_DEDUCTION" Width="1.5" PointX="3" PointY="80.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.EMPLOYE_DISCIPLINE" Width="1.5" PointX="3" PointY="83.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.EMPLOYE_DOCUMENT" Width="1.5" PointX="3" PointY="86.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.EMPLOYE_FORMATION" Width="1.5" PointX="3" PointY="91.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.EMPLOYE_OBSERVATION" Width="1.5" PointX="3" PointY="95.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.EMPLOYE_PRET" Width="1.5" PointX="12" PointY="49.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.EMPLOYE_RUBRIQUE" Width="1.5" PointX="3" PointY="103.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.EMPLOYE_VENTILATION" Width="1.5" PointX="9.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.FONCTION" Width="1.5" PointX="3.75" PointY="36" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.GRILLE" Width="1.5" PointX="1.5" PointY="73.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.GRILLE_DETAIL" Width="1.5" PointX="3.75" PointY="73.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.JOUR_FERIE" Width="1.5" PointX="9.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.JOURNAL_COMPTABLE" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.LISTE_RAPPORT" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.MODE_PAIEMENT" Width="1.5" PointX="3.75" PointY="33.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.MODELE_CORRESPONDANCE" Width="1.5" PointX="6.75" PointY="63.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.MODELE_PAIE" Width="1.5" PointX="1.5" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.MODELE_PAIE_DETAIL" Width="1.5" PointX="6.75" PointY="34.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.NATURE_PAIEMENT" Width="1.5" PointX="11.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.PARAMETRE_COMPTABILITE" Width="1.5" PointX="11.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.PARAMETRE_POINTAGE" Width="1.5" PointX="11.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.PLAN_PAIE" Width="1.5" PointX="1.5" PointY="30.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.PLAN_PAIE_DETAIL" Width="1.5" PointX="0.75" PointY="37.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.POINTAGE" Width="1.5" PointX="3" PointY="107.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.REFRESH_TOKEN" Width="1.5" PointX="14.25" PointY="48.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.ROLE" Width="1.5" PointX="9.75" PointY="41.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.RUBRIQUE" Width="1.5" PointX="4.5" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.SEQUENCE" Width="1.5" PointX="4.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.SITE" Width="1.5" PointX="6.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.TYPE_CONTRAT" Width="1.5" PointX="6.75" PointY="42.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.TYPE_INDEMNITE" Width="1.5" PointX="8.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.TYPE_PERIODE" Width="1.5" PointX="3.75" PointY="77" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.TYPE_PRET" Width="1.5" PointX="9.75" PointY="38.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.TYPE_RUBRIQUE" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.USER" Width="1.5" PointX="12" PointY="42.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.VIREMENT" Width="1.5" PointX="9" PointY="59.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.VIREMENT_DETAIL" Width="1.5" PointX="11.25" PointY="54.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.DECLARATION_EMPLOYEUR" Width="1.5" PointX="13.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.DECOMPTE_MONNAIE" Width="1.5" PointX="13.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.IMP_CAVIS" Width="1.5" PointX="10.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.IMP_DECLARATION_ASSURANCE" Width="1.5" PointX="12.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.IMP_FICHE_ANNUELLE_PAIE" Width="1.5" PointX="14.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.SITUATION_CONGE" Width="1.5" PointX="15.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.SITUATION_CONGE_SPECIAL" Width="1.5" PointX="4.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.Grand_Livre" Width="1.5" PointX="15.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.Vue_CubeAnalysePaie" Width="1.5" PointX="6.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.Vue_CubeAnalysePersonnel" Width="1.5" PointX="0.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.Vue_Dossier_Employe" Width="1.5" PointX="16.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.Vue_Employe" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.Vue_Mouvement_Conge" Width="1.5" PointX="8.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.Vue_Mouvement_Conge_Special" Width="1.5" PointX="18.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.Vue_SituationPret" Width="1.5" PointX="18.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ARTIPERSONNEL_SOC001Model.Vue_SoldeActuel_Conge" Width="1.5" PointX="2.75" PointY="19.75" IsExpanded="true" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_BULLETIN_PAIE_BANQUE1" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_BORDEREAU_EMPLOYE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_BORDEREAU_PLAN_PAIE_DETAIL" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_BULLETIN_PAIE_DEPARTEMENT" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_BULLETIN_PAIE_EMPLOYE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_BULLETIN_PAIE_FONCTION" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_BULLETIN_PAIE_GRILLE_DETAIL" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_BULLETIN_PAIE_MODE_PAIEMENT" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_BULLETIN_PAIE_MODELE_PAIE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_BULLETIN_PAIE_PLAN_PAIE_DETAIL" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_BULLETIN_PAIE_TYPE_PERIODE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_VIREMENT_DETAIL_BULLETIN_PAIE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_ECRITURE_OUVERTURE_COMPTE_COMPTABLE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_CON_HISRY_REF_TKN" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_CONNECTIONS_HISTORY_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_DECLARATION_CNSS_DETAIL_DECLARATION_CNSS" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_DECLARATION_CNSS_DETAIL_EMPLOYE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_DECLARATION_CNSS_TAUX_EMPLOYEUR_EMPLOYE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_ECRITURE_DETAIL_ECRITURE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_ECRITURE_JOURNAL_COMPTABLE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_EMPLOYE_A_CHARGE_EMPLOYE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_EMPLOYE_ABSCENCE_EMPLOYE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_EMPLOYE_AJUSTEMENT_CONGE_EMPLOYE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_EMPLOYE_AVANCE_EMPLOYE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_EMPLOYE_CONGE_EMPLOYE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_EMPLOYE_CONTRAT_EMPLOYE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_EMPLOYE_CORRESPONDANCE_EMPLOYE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_EMPLOYE_DEDUCTION_EMPLOYE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_EMPLOYE_DISCIPLINE_EMPLOYE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_EMPLOYE_DOCUMENT_EMPLOYE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_EMPLOYE_FORMATION_EMPLOYE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_EMPLOYE_OBSERVATION_EMPLOYE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_EMPLOYE_PRET_EMPLOYE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_EMPLOYE_RUBRIQUE_EMPLOYE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_POINTAGE_EMPLOYE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_USER_EMPLOYE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_VIREMENT_DETAIL_EMPLOYE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_EMPLOYE_CONTRAT_TYPE_CONTRAT" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_EMPLOYE_CORRESPONDANCE_MODELE_CORRESPONDANCE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_EMPLOYE_PRET_TYPE_PRET" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_GRILLE_DETAIL_GRILLE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_MODELE_DETAIL_MODELE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_PLAN_PAIE_DETAIL_MODELE_PAIE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_MODELE_PAIE_DETAIL_RUBRIQUE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_PLAN_DETAIL_PLAN" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_REFRESH_TOKEN_USER" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_USER_ROLE" ManuallyRouted="false" />
+        <AssociationConnector Association="ARTIPERSONNEL_SOC001Model.FK_VIREMENT_DETAIL_VIREMENT" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,361 @@
+﻿{
+   "ContextClassName": "ARTIPERSONNEL_SOC001Context",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": "Entities",
+   "ProjectRootNamespace": "PersonnelASPnetCore.Domaine",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[ACTIVITE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[APPELLATION]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[AVANCEMENT]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[AVANCEMENT_DETAIL]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[BANQUE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[BANQUE_VIREMENT]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[BAREME_IMPOT]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[BAREME_SMIG]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[BORDEREAU]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[BULLETIN_PAIE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[BULLETIN_PAIE_DETAIL]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[COMPTE_COMPTABLE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[CONNECTIONS_HISTORY]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[DECLARATION_CNSS]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[DECLARATION_CNSS_DETAIL]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[DECLARATION_CNSS_TAUX_EMPLOYEUR]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[DECLARATION_EMPLOYEUR]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[DECOMPTE_MONNAIE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[DEPARTEMENT]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[ECRITURE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[ECRITURE_DETAIL]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[ECRITURE_OUVERTURE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[EMPLOYE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[EMPLOYE_A_CHARGE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[EMPLOYE_ABSENCE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[EMPLOYE_AFFICHAGE_GRILLE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[EMPLOYE_AJUSTEMENT_CONGE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[EMPLOYE_AVANCE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[EMPLOYE_CONGE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[EMPLOYE_CONTRAT]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[EMPLOYE_CORRESPONDANCE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[EMPLOYE_DEDUCTION]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[EMPLOYE_DISCIPLINE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[EMPLOYE_DOCUMENT]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[EMPLOYE_FORMATION]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[EMPLOYE_OBSERVATION]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[EMPLOYE_PRET]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[EMPLOYE_RUBRIQUE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[EMPLOYE_VENTILATION]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[FONCTION]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Grand_Livre]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[GRILLE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[GRILLE_DETAIL]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[IMP_CAVIS]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[IMP_DECLARATION_ASSURANCE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[IMP_DECLARATION_MENSUEL_IMPOT]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[IMP_FICHE_ANNUELLE_PAIE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[JOUR_FERIE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[JOURNAL_COMPTABLE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[LISTE_RAPPORT]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[MODE_PAIEMENT]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[MODELE_CORRESPONDANCE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[MODELE_PAIE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[MODELE_PAIE_DETAIL]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[NATURE_PAIEMENT]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[PARAMETRE_COMPTABILITE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[PARAMETRE_POINTAGE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[PLAN_PAIE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[PLAN_PAIE_DETAIL]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[POINTAGE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[REFRESH_TOKEN]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[ROLE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[RUBRIQUE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[SEQUENCE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[SITE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[SITUATION_CONGE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[SITUATION_CONGE_SPECIAL]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[TYPE_CONTRAT]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[TYPE_INDEMNITE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[TYPE_PERIODE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[TYPE_PRET]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[TYPE_RUBRIQUE]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[USER]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[VIREMENT]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[VIREMENT_DETAIL]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Vue_CubeAnalysePaie]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Vue_CubeAnalysePersonnel]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Vue_Dossier_Employe]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Vue_Employe]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Vue_Mouvement_Conge]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Vue_Mouvement_Conge_Special]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Vue_SituationPret]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Vue_SoldeActuel_Conge]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Vue_SPOT]"
+      }
+   ],
+   "UseDatabaseNames": true,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseNodaTime": false,
+   "UseSpatial": false,
+   "UseStoredProcedures": false
+}

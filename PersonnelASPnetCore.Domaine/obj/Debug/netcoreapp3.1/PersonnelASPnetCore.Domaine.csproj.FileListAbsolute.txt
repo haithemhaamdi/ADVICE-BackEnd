@@ -1,0 +1,16 @@
+C:\Users\HAITHEM\source\repos\ADVICE\PersonnelASPnetCore.Domaine\bin\Debug\netcoreapp3.1\PersonnelASPnetCore.Domaine.deps.json
+C:\Users\HAITHEM\source\repos\ADVICE\PersonnelASPnetCore.Domaine\bin\Debug\netcoreapp3.1\PersonnelASPnetCore.Domaine.dll
+C:\Users\HAITHEM\source\repos\ADVICE\PersonnelASPnetCore.Domaine\obj\Debug\netcoreapp3.1\PersonnelASPnetCore.Domaine.csprojAssemblyReference.cache
+C:\Users\HAITHEM\source\repos\ADVICE\PersonnelASPnetCore.Domaine\obj\Debug\netcoreapp3.1\PersonnelASPnetCore.Domaine.AssemblyInfoInputs.cache
+C:\Users\HAITHEM\source\repos\ADVICE\PersonnelASPnetCore.Domaine\obj\Debug\netcoreapp3.1\PersonnelASPnetCore.Domaine.AssemblyInfo.cs
+C:\Users\HAITHEM\source\repos\ADVICE\PersonnelASPnetCore.Domaine\bin\Debug\netcoreapp3.1\PersonnelASPnetCore.Domaine.runtimeconfig.json
+C:\Users\HAITHEM\source\repos\ADVICE\PersonnelASPnetCore.Domaine\bin\Debug\netcoreapp3.1\PersonnelASPnetCore.Domaine.runtimeconfig.dev.json
+D:\HAITHEM\source\repo\_ADVICE\PersonnelASPnetCore.Domaine\bin\Debug\netcoreapp3.1\PersonnelASPnetCore.Domaine.deps.json
+D:\HAITHEM\source\repo\_ADVICE\PersonnelASPnetCore.Domaine\bin\Debug\netcoreapp3.1\PersonnelASPnetCore.Domaine.runtimeconfig.json
+D:\HAITHEM\source\repo\_ADVICE\PersonnelASPnetCore.Domaine\bin\Debug\netcoreapp3.1\PersonnelASPnetCore.Domaine.runtimeconfig.dev.json
+D:\HAITHEM\source\repo\_ADVICE\PersonnelASPnetCore.Domaine\bin\Debug\netcoreapp3.1\PersonnelASPnetCore.Domaine.dll
+D:\HAITHEM\source\repo\_ADVICE\PersonnelASPnetCore.Domaine\bin\Debug\netcoreapp3.1\PersonnelASPnetCore.Domaine.pdb
+D:\HAITHEM\source\repo\_ADVICE\PersonnelASPnetCore.Domaine\obj\Debug\netcoreapp3.1\PersonnelASPnetCore.Domaine.AssemblyInfoInputs.cache
+D:\HAITHEM\source\repo\_ADVICE\PersonnelASPnetCore.Domaine\obj\Debug\netcoreapp3.1\PersonnelASPnetCore.Domaine.AssemblyInfo.cs
+D:\HAITHEM\source\repo\_ADVICE\PersonnelASPnetCore.Domaine\obj\Debug\netcoreapp3.1\PersonnelASPnetCore.Domaine.dll
+D:\HAITHEM\source\repo\_ADVICE\PersonnelASPnetCore.Domaine\obj\Debug\netcoreapp3.1\PersonnelASPnetCore.Domaine.pdb
