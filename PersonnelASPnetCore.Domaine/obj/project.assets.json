@@ -5036,11 +5036,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\HAITHEM\\source\\repo\\_ADVICE\\PersonnelASPnetCore.Domaine\\PersonnelASPnetCore.Domaine.csproj",
+      "projectUniqueName": "D:\\HAITHEM\\source\\AzureDevOps\\ADVICE_NetCore\\PersonnelASPnetCore.Domaine\\PersonnelASPnetCore.Domaine.csproj",
       "projectName": "PersonnelASPnetCore.Domaine",
-      "projectPath": "D:\\HAITHEM\\source\\repo\\_ADVICE\\PersonnelASPnetCore.Domaine\\PersonnelASPnetCore.Domaine.csproj",
+      "projectPath": "D:\\HAITHEM\\source\\AzureDevOps\\ADVICE_NetCore\\PersonnelASPnetCore.Domaine\\PersonnelASPnetCore.Domaine.csproj",
       "packagesPath": "C:\\Users\\HAITHEM\\.nuget\\packages\\",
-      "outputPath": "D:\\HAITHEM\\source\\repo\\_ADVICE\\PersonnelASPnetCore.Domaine\\obj\\",
+      "outputPath": "D:\\HAITHEM\\source\\AzureDevOps\\ADVICE_NetCore\\PersonnelASPnetCore.Domaine\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
