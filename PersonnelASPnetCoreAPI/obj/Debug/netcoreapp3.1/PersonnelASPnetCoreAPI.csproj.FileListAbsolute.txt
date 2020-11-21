@@ -105,10 +105,10 @@ D:\HAITHEM\source\repo\_ADVICE\PersonnelASPnetCoreAPI\bin\Debug\netcoreapp3.1\NL
 D:\HAITHEM\source\repo\_ADVICE\PersonnelASPnetCoreAPI\bin\Debug\netcoreapp3.1\NLog.Web.AspNetCore.dll
 D:\HAITHEM\source\repo\_ADVICE\PersonnelASPnetCoreAPI\obj\Debug\netcoreapp3.1\PersonnelASPnetCoreAPI.dll
 D:\HAITHEM\source\repo\_ADVICE\PersonnelASPnetCoreAPI\obj\Debug\netcoreapp3.1\PersonnelASPnetCoreAPI.pdb
+D:\HAITHEM\source\AzureDevOps\ADVICE_NetCore\PersonnelASPnetCoreAPI\bin\Debug\netcoreapp3.1\nlog.config
 D:\HAITHEM\source\AzureDevOps\ADVICE_NetCore\PersonnelASPnetCoreAPI\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\HAITHEM\source\AzureDevOps\ADVICE_NetCore\PersonnelASPnetCoreAPI\bin\Debug\netcoreapp3.1\appsettings.json
 D:\HAITHEM\source\AzureDevOps\ADVICE_NetCore\PersonnelASPnetCoreAPI\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
-D:\HAITHEM\source\AzureDevOps\ADVICE_NetCore\PersonnelASPnetCoreAPI\bin\Debug\netcoreapp3.1\nlog.config
 D:\HAITHEM\source\AzureDevOps\ADVICE_NetCore\PersonnelASPnetCoreAPI\bin\Debug\netcoreapp3.1\PersonnelASPnetCoreAPI.exe
 D:\HAITHEM\source\AzureDevOps\ADVICE_NetCore\PersonnelASPnetCoreAPI\bin\Debug\netcoreapp3.1\PersonnelASPnetCoreAPI.deps.json
 D:\HAITHEM\source\AzureDevOps\ADVICE_NetCore\PersonnelASPnetCoreAPI\bin\Debug\netcoreapp3.1\PersonnelASPnetCoreAPI.runtimeconfig.json
