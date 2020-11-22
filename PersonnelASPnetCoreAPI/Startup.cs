@@ -86,7 +86,20 @@ namespace PersonnelASPnetCoreAPI
             #region GetConnectionString
             // use sql server db in production and in development
             if (_env.IsProduction())
-                services.AddDbContext<ARTIPERSONNEL_SOC001Context>();
+            {
+                services.AddDbContext<ARTIPERSONNEL_SOC001Context>(options =>
+                options.UseSqlServer(_configuration.GetConnectionString("PRODConnection")));
+            }
+            else if (_env.IsStaging())
+            {
+                services.AddDbContext<ARTIPERSONNEL_SOC001Context>(options =>
+                options.UseSqlServer(_configuration.GetConnectionString("STAGINGConnection")));
+            }
+            else if (_env.IsDevelopment())
+            {
+                services.AddDbContext<ARTIPERSONNEL_SOC001Context>(options =>
+                options.UseSqlServer(_configuration.GetConnectionString("DefaultConnection")));
+            }
             else
                 services.AddDbContext<ARTIPERSONNEL_SOC001Context>(options =>
                 options.UseSqlServer(_configuration.GetConnectionString("DefaultConnection")));
