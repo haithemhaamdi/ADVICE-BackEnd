@@ -26,6 +26,8 @@
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.8",
           "Microsoft.AspNetCore.Session": "2.2.0",
+          "Microsoft.EntityFrameworkCore": "3.1.2",
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.2",
           "NLog.Web.AspNetCore": "4.9.3",
           "PersonnelASPnetCore.Data": "1.0.0",
           "PersonnelASPnetCore.Domaine": "1.0.0",
