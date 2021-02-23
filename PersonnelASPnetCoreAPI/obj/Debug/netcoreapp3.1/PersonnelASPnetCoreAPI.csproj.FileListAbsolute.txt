@@ -134,6 +134,7 @@ D:\HAITHEM\source\AzureDevOps\ADVICE_NetCore\PersonnelASPnetCoreAPI\bin\Debug\ne
 D:\HAITHEM\source\AzureDevOps\ADVICE_NetCore\PersonnelASPnetCoreAPI\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 D:\HAITHEM\source\AzureDevOps\ADVICE_NetCore\PersonnelASPnetCoreAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 D:\HAITHEM\source\AzureDevOps\ADVICE_NetCore\PersonnelASPnetCoreAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\HAITHEM\source\AzureDevOps\ADVICE_NetCore\PersonnelASPnetCoreAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 D:\HAITHEM\source\AzureDevOps\ADVICE_NetCore\PersonnelASPnetCoreAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
 D:\HAITHEM\source\AzureDevOps\ADVICE_NetCore\PersonnelASPnetCoreAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
 D:\HAITHEM\source\AzureDevOps\ADVICE_NetCore\PersonnelASPnetCoreAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
@@ -204,6 +205,8 @@ D:\HAITHEM\source\AzureDevOps\ADVICE_NetCore\PersonnelASPnetCoreAPI\bin\Debug\ne
 D:\HAITHEM\source\AzureDevOps\ADVICE_NetCore\PersonnelASPnetCoreAPI\obj\Debug\netcoreapp3.1\PersonnelASPnetCoreAPI.csprojAssemblyReference.cache
 D:\HAITHEM\source\AzureDevOps\ADVICE_NetCore\PersonnelASPnetCoreAPI\obj\Debug\netcoreapp3.1\staticwebassets\PersonnelASPnetCoreAPI.StaticWebAssets.Manifest.cache
 D:\HAITHEM\source\AzureDevOps\ADVICE_NetCore\PersonnelASPnetCoreAPI\obj\Debug\netcoreapp3.1\staticwebassets\PersonnelASPnetCoreAPI.StaticWebAssets.xml
+D:\HAITHEM\source\AzureDevOps\ADVICE_NetCore\PersonnelASPnetCoreAPI\obj\Debug\netcoreapp3.1\PersonnelASPnetCoreAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\HAITHEM\source\AzureDevOps\ADVICE_NetCore\PersonnelASPnetCoreAPI\obj\Debug\netcoreapp3.1\PersonnelASPnetCoreAPI.MvcApplicationPartsAssemblyInfo.cache
 D:\HAITHEM\source\AzureDevOps\ADVICE_NetCore\PersonnelASPnetCoreAPI\obj\Debug\netcoreapp3.1\PersonnelASPnetCoreAPI.AssemblyInfoInputs.cache
 D:\HAITHEM\source\AzureDevOps\ADVICE_NetCore\PersonnelASPnetCoreAPI\obj\Debug\netcoreapp3.1\PersonnelASPnetCoreAPI.AssemblyInfo.cs
 D:\HAITHEM\source\AzureDevOps\ADVICE_NetCore\PersonnelASPnetCoreAPI\obj\Debug\netcoreapp3.1\PersonnelASPnetCoreAPI.RazorTargetAssemblyInfo.cache

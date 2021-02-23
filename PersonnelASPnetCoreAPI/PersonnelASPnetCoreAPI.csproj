@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <StartupObject>PersonnelASPnetCoreAPI.Program</StartupObject>
     <ApplicationIcon>AdviceIco.ico</ApplicationIcon>
+    <UserSecretsId>fea4360e-0605-4914-8195-7de4ddc7964f</UserSecretsId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
