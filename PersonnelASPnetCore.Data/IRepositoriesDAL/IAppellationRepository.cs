@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PersonnelASPnetCore.Data.IRepositoriesDAL
 {
-    public class IAppellationRepository
+    public interface IAppellationRepository
     {
     }
 }

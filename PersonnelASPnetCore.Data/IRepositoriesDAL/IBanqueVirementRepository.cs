@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PersonnelASPnetCore.Data.IRepositoriesDAL
 {
-    public class IBanqueVirementRepository
+    public interface IBanqueVirementRepository
     {
     }
 }

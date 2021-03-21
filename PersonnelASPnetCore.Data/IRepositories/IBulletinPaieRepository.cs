@@ -13,7 +13,6 @@ namespace PersonnelASPnetCore.Data.IRepositories
         BULLETIN_PAIE GetBulletinPaieByID(string NumeroBulletin);
         BULLETIN_PAIE GetBulletinPaieByName(string NumeroBulletin);
         IEnumerable<BULLETIN_PAIE> GetAllBulletinsPaie();
-        // Chargement hâtif
         IEnumerable<BULLETIN_PAIE> GetAllWithRefernces();
         Task<IEnumerable<BULLETIN_PAIE>> GetAllBulletinPaiesAsync();
         Task<BULLETIN_PAIE> GetBulletinPaieByIDAsync(string NumeroBulletin);

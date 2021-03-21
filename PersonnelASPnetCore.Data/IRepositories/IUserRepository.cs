@@ -14,7 +14,6 @@ namespace PersonnelASPnetCore.Data.IRepositories
         USER GetUserByID(string code);
         USER GetUserByName(string Prenom);
         IEnumerable<USER> GetAllUsers();
-        // Chargement hâtif
         IEnumerable<USER> GetAllWithRefernces();
         Task<IEnumerable<USER>> GetAllUsersAsync();
         Task<USER> GetUserByIDAsync(string Code);

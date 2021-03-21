@@ -256,7 +256,7 @@ namespace PersonnelASPnetCoreAPI
             services.AddScoped<PersonnelASPnetCore.Data.IRepositories.IEmployeRepository, PersonnelASPnetCore.Data.Repositories.EmployeRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<PersonnelASPnetCore.Data.IRepositoriesDAL.IEmployeRepository, PersonnelASPnetCore.Data.RepositoriesDAL.EmployeRepository>();
-            services.AddScoped<IBulletinPaieRepository, BulletinPaieRepository>();
+            services.AddScoped<IBulletinPaieRepository, PersonnelASPnetCore.Data.Repositories.BulletinPaieRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             #endregion
 
