@@ -1,5 +1,4 @@
 ﻿using PersonnelASPnetCore.Data.IRepositories;
-//using PersonnelASPnetCore.Data.IRepositoriesDAL;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,105 +11,124 @@ namespace PersonnelASPnetCore.Data.Infrastructure
         IEmployeRepository EMPLOYERepo { get; }
         IUserRepository USERRepo { get; }
         #endregion
+
         #region ACTIVITE
         IActiviteRepository ACTIVITERepo { get; }
         IAppellationRepository APPELLATIONRepo { get; }
         #endregion
+
         #region AVANCEMENT
         IAvancementRepository AVANCEMENTRepo { get; }
         IAvancement_DetailRepository AVANCEMENT_DETAILRepo { get; }
         #endregion
+
         #region BANQUE
-        //IBanqueRepository BANQUERepo { get; }
-        IUserRepository BANQUE_VIREMENTRepo { get; }
+        IBanqueRepository BANQUERepo { get; }
+        IBanqueVirementRepository BANQUE_VIREMENTRepo { get; }
         #endregion
+
         #region BAREME
-        IUserRepository BAREME_IMPOTRepo { get; }
-        IUserRepository BAREME_SMIGRepo { get; }
+        IBaremeImportRepository BAREME_IMPOTRepo { get; }
+        IBaremeSMIGRepository BAREME_SMIGRepo { get; }
         #endregion
+
         #region BULLETIN_PAIE
         IBulletinPaieRepository BULLETINPAIERepo { get; }
-        IUserRepository BULLETIN_PAIE_DETAILRepo { get; }
+        IBulletinPaieDetailRepository BULLETIN_PAIE_DETAILRepo { get; }
         #endregion
+
         #region DECLARATION
-        IUserRepository DECLARATION_CNSSRepo { get; }
-        IUserRepository DECLARATION_CNSS_DETAILRepo { get; }
-        IUserRepository DECLARATION_CNSS_TAUX_EMPLOYEURRepo { get; }
-        IUserRepository DECLARATION_EMPLOYEURRepo { get; }
+        IDeclarationCNSSRepository DECLARATION_CNSSRepo { get; }
+        IDeclarationCNSSDetailRepository DECLARATION_CNSS_DETAILRepo { get; }
+        IDeclarationCNSSTauxEmployeurRepository DECLARATION_CNSS_TAUX_EMPLOYEURRepo { get; }
+        IDeclarationEmployeurRepository DECLARATION_EMPLOYEURRepo { get; }
         #endregion
+
         #region IMPOT
-        IUserRepository IMP_DECLARATION_MENSUEL_IMPOTRepo { get; }
+        IIMPDeclarationMensuelImpotRepository IMP_DECLARATION_MENSUEL_IMPOTRepo { get; }
         #endregion
+
         #region VIREMENT
-        IUserRepository VIREMENTRepo { get; }
-        IUserRepository VIREMENT_DETAILRepo { get; }
+        IVirementRepository VIREMENTRepo { get; }
+        IVirementDetailRepository VIREMENT_DETAILRepo { get; }
         #endregion
+
         #region ADMINISTRATIF
-        IUserRepository EMPLOYE_ABSENCERepo { get; }
-        IUserRepository EMPLOYE_AFFICHAGE_GRILLERepo { get; }
-        IUserRepository EMPLOYE_AJUSTEMENT_CONGERepo { get; }
-        IUserRepository EMPLOYE_AVANCERepo { get; }
-        IUserRepository EMPLOYE_CONGERepo { get; }
-        IUserRepository EMPLOYE_CONTRATRepo { get; }
-        IUserRepository EMPLOYE_CORRESPONDANCERepo { get; }
-        IUserRepository EMPLOYE_DEDUCTIONRepo { get; }
-        IUserRepository EMPLOYE_DISCIPLINERepo { get; }
-        IUserRepository EMPLOYE_DOCUMENTRepo { get; }
-        IUserRepository EMPLOYE_FORMATIONRepo { get; }
-        IUserRepository EMPLOYE_OBSERVATIONRepo { get; }
-        IUserRepository EMPLOYE_PRETRepo { get; }
-        IUserRepository EMPLOYE_RUBRIQUERepo { get; }
-        IUserRepository EMPLOYE_VENTILATIONRepo { get; }
-        IUserRepository FONCTIONRepo { get; }
-        IUserRepository SITUATION_CONGERepo { get; }
-        IUserRepository SITUATION_CONGE_SPECIALRepo { get; }
-        IUserRepository TYPE_CONTRATRepo { get; }
-        IUserRepository TYPE_INDEMNITERepo { get; }
-        IUserRepository TYPE_PERIODERepo { get; }
-        IUserRepository TYPE_PRETRepo { get; }
+        IEmployeAbsenceRepository EMPLOYE_ABSENCERepo { get; }
+        IEmployeAffichageGrilleRepository EMPLOYE_AFFICHAGE_GRILLERepo { get; }
+        IEmployeAjustementCongeRepository EMPLOYE_AJUSTEMENT_CONGERepo { get; }
+        IEmployeAvanceRepository EMPLOYE_AVANCERepo { get; }
+        IEmployeCongeRepository EMPLOYE_CONGERepo { get; }
+        IEmployeContratRepository EMPLOYE_CONTRATRepo { get; }
+        IEmployeCorrespondanceRepository EMPLOYE_CORRESPONDANCERepo { get; }
+        IEmployeDeductionRepository EMPLOYE_DEDUCTIONRepo { get; }
+        IEmployeDesciplineRepository EMPLOYE_DISCIPLINERepo { get; }
+        IEmployeDocumentRepository EMPLOYE_DOCUMENTRepo { get; }
+        IEmployeFormationRepository EMPLOYE_FORMATIONRepo { get; }
+        IEmployeObservationRepository EMPLOYE_OBSERVATIONRepo { get; }
+        IEmployePretRepository EMPLOYE_PRETRepo { get; }
+        IEmployeRubriqueRepository EMPLOYE_RUBRIQUERepo { get; }
+        IEmployeVentilationRepository EMPLOYE_VENTILATIONRepo { get; }
+        IFonctionRepository FONCTIONRepo { get; }
+        ISituationCongeRepository SITUATION_CONGERepo { get; }
+        ISituationCongeSpecialRepository SITUATION_CONGE_SPECIALRepo { get; }
+        ITypeContratRepository EMPLOYE_TYPE_CONTRATRepo { get; }
+        ITypeIndemniteRepository TYPE_INDEMNITERepo { get; }
+        ITypePeriodeRepository EMPLOYE_TYPE_PERIODERepo { get; }
+        ITypePretRepository EMPLOYE_TYPE_PRETRepo { get; }
         #endregion
-        #region PAIEMENT
-        IUserRepository MODE_PAIEMENTRepo { get; }
-        IUserRepository MODELE_CORRESPONDANCERepo { get; }
-        IUserRepository MODELE_PAIERepo { get; }
-        IUserRepository MODELE_PAIE_DETAILRepo { get; }
-        IUserRepository NATURE_PAIEMENTRepo { get; }
-        IUserRepository PLAN_PAIERepo { get; }
-        IUserRepository PLAN_PAIE_DETAILRepo { get; }
+
+        #region PAIEMENT - PAIE - PLAN_PAIE
+        IModePaiementRepository MODE_PAIEMENTRepo { get; }
+        IModeleCorrespondanceRepository MODELE_CORRESPONDANCERepo { get; }
+        IModelePaieRepository MODELE_PAIERepo { get; }
+        IModelePaieDetailRepository MODELE_PAIE_DETAILRepo { get; }
+        INaturePaiementRepository NATURE_PAIEMENTRepo { get; }
+        IPlanPaieRepository PLAN_PAIERepo { get; }
+        IPlanPaieDetailRepository PLAN_PAIE_DETAILRepo { get; }
         #endregion
+
         #region COMPTABILITE
-        IUserRepository PARAMETRE_COMPTABILITERepo { get; }
-        IUserRepository COMPTE_COMPTABLERepo { get; }
-        IUserRepository JOURNAL_COMPTABLERepo { get; }
-
-
+        IParametreComptabiliteRepository PARAMETRE_COMPTABILITERepo { get; }
+        ICompteComptableRepository COMPTE_COMPTABLERepo { get; }
+        IJournalComptableRepository JOURNAL_COMPTABLERepo { get; }
         #endregion
+
         #region POINTAGE
-        IUserRepository POINTAGERepo { get; }
-        IUserRepository PARAMETRE_POINTAGERepo { get; }
+        IPointageRepository POINTAGERepo { get; }
+        IParametrePointageRepository PARAMETRE_POINTAGERepo { get; }
 
         #endregion
+
         #region XXX
-        IUserRepository BORDEREAURepo { get; }
-        IUserRepository DECOMPTE_MONNAIERepo { get; }
-        IUserRepository ECRITURERepo { get; }
-        IUserRepository ECRITURE_DETAILRepo { get; }
-        IUserRepository ECRITURE_OUVERTURERepo { get; }
-        IUserRepository EMPLOYE_A_CHARGERepo { get; }
-        IUserRepository GRILLERepo { get; }
-        IUserRepository GRILLE_DETAILRepo { get; }
-        IUserRepository IMP_CAVISRepo { get; }
-        IUserRepository IMP_DECLARATION_ASSURANCERepo { get; }
-        IUserRepository IMP_FICHE_ANNUELLE_PAIERepo { get; }
-        IUserRepository RUBRIQUERepo { get; }
-        IUserRepository SEQUENCERepo { get; }
-        IUserRepository SITERepo { get; }
-        IUserRepository TYPE_RUBRIQUERepo { get; }
+        IBordereauRepository BORDEREAURepo { get; }
+        IDecompteMonnaieRepository DECOMPTE_MONNAIERepo { get; }
+        IEcritureRepository ECRITURERepo { get; }
+        IEcritureDetailRepository ECRITURE_DETAILRepo { get; }
+        IEcritureOuvertureRepository ECRITURE_OUVERTURERepo { get; }
+        IEmployeAChargeRepository EMPLOYE_A_CHARGERepo { get; }
+
+        #region Grille
+        IGrilleRepository GRILLERepo { get; }
+        IGilleDetailRepository GRILLE_DETAILRepo { get; }
         #endregion
+
+        #region IMP
+        IIMPCavisRepository IMP_CAVISRepo { get; }
+        IIMPDeclarationAssuranceRepository IMP_DECLARATION_ASSURANCERepo { get; }
+        IIMPFicheAnnuellePaieRepository IMP_FICHE_ANNUELLE_PAIERepo { get; }
+        #endregion
+
+        IRubriqueRepository RUBRIQUERepo { get; }
+        ISequenceRepository SEQUENCERepo { get; }
+        ISiteRepository SITERepo { get; }
+        ITypeRubriqueRepository TYPE_RUBRIQUERepo { get; }
+        #endregion
+
         #region SOCIETE
-        IUserRepository JOUR_FERIERepo { get; }
-        IUserRepository LISTE_RAPPORTRepo { get; }
-        IUserRepository DEPARTEMENTRepo { get; }
+        IJourFerierRepository JOUR_FERIERepo { get; }
+        IListeRapportRepository LISTE_RAPPORTRepo { get; }
+        IDepartementRepository DEPARTEMENTRepo { get; }
 
         #endregion
     }
