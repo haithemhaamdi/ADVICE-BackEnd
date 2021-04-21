@@ -29,6 +29,9 @@ namespace PersonnelASPnetCore.Domaine.Entities
         public byte[] PasswordSalt { get; set; }
         public string Token { get; set; }
         public string IpAddress { get; set; }
+        public string AdresseMail { get; set; }
+        public string Picture_URL { get; set; }
+        public byte[] Picture { get; set; }
 
         public virtual EMPLOYE CodeEmployeNavigation { get; set; }
         public virtual ROLE CodeRoleNavigation { get; set; }

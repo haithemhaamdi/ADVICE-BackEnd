@@ -14,6 +14,8 @@ using PersonnelASPnetCore.Domaine.Entities;
 using PersonnelASPnetCore.Dto.BULLETIN_PAIE_Dto;
 using Microsoft.EntityFrameworkCore;
 using PersonnelASPnetCore.Data;
+using Microsoft.AspNetCore.Authorization;
+using PersonnelASPnetCore.Dto.ROLE_Dto;
 
 namespace PersonnelASPnetCoreAPI.Controllers
 {
@@ -22,7 +24,8 @@ namespace PersonnelASPnetCoreAPI.Controllers
     ///Force toutes les actions du contrôleur à retourner des réponses au format JSON.
     ///Si d’autres formateurs sont configurés et que le client spécifie un format différent, JSON est retourné
     /// </summary>
-
+    /// 
+    [Authorize]
     [ApiController]
     [Route("api/BulletinsPaie")]
     [Produces("application/json")]
@@ -33,8 +36,7 @@ namespace PersonnelASPnetCoreAPI.Controllers
         private readonly ARTIPERSONNEL_SOC001Context _context;
         private readonly IRepositoryWrapper _repositoryWrapper;
         //Interrogate the DB directly (without going through a stored procedure)[0]
-        private readonly PersonnelASPnetCore.Data.IRepositories.IBulletinPaieRepository _bulletin_PaieRepository;
-        private readonly IBulletin_PaieRepository _bulletin_PaieRepo;
+        private readonly IBulletin_PaieRepository<BULLETIN_PAIE> _bulletin_PaieRepo;
         private readonly IMapper _mapper;
         private readonly ILoggerManager _loggerManager;
         private readonly ILogger _logger;
@@ -45,8 +47,7 @@ namespace PersonnelASPnetCoreAPI.Controllers
             (
             ARTIPERSONNEL_SOC001Context context,
             IRepositoryWrapper repositoryWrapper,
-            PersonnelASPnetCore.Data.IRepositories.IBulletinPaieRepository getRepo,
-            IBulletin_PaieRepository repo,
+            IBulletin_PaieRepository<BULLETIN_PAIE> repo,
             IMapper mapper,
             ILoggerManager loggerManager,
             ILogger<BulletinsPaieController> logger,
@@ -58,9 +59,7 @@ namespace PersonnelASPnetCoreAPI.Controllers
             // Repository IRepositoryWrapper [2]
             _repositoryWrapper = repositoryWrapper ??
                 throw new ArgumentNullException(nameof(repositoryWrapper));
-            // Repository IBulletinPaieRepository [3]
-            _bulletin_PaieRepository = getRepo ??
-                throw new ArgumentNullException(nameof(getRepo));
+
             // Repository IBulletinPaieRepository (PS)[4]
             _bulletin_PaieRepo = repo ??
                 throw new ArgumentNullException(nameof(repo));
@@ -79,6 +78,7 @@ namespace PersonnelASPnetCoreAPI.Controllers
         }
         #endregion
 
+        [Authorize(Roles = Role.Admin)]
         [HttpGet()]
         public ActionResult<IEnumerable<BULLETIN_PAIEdto>> Get()
         {
@@ -86,6 +86,7 @@ namespace PersonnelASPnetCoreAPI.Controllers
             return Ok(_mapper.Map<IEnumerable<BulletinPaieResponseDto>>(BulletinsPaieFromRepo));
         }
 
+        [Authorize(Roles = Role.Admin)]
         [HttpGet("{numeroBulletin}")]
         public IActionResult Get(string numeroBulletin)
         {
@@ -98,6 +99,7 @@ namespace PersonnelASPnetCoreAPI.Controllers
             return Ok(_mapper.Map<BulletinPaieResponseDto>(BulletinPaieFromRepo));
         }
 
+        [Authorize(Roles = Role.Admin)]
         [HttpPost]
         public IActionResult Post([FromBody]AddBulletinPaieDto addBulletinPaieDto)
         {
@@ -120,6 +122,7 @@ namespace PersonnelASPnetCoreAPI.Controllers
             }
         }
 
+        [Authorize(Roles = Role.Admin)]
         [HttpPut("{numeroBulletin}")]
         public async Task<IActionResult> Put([FromRoute]string numeroBulletin, [FromBody]EditBulletinPaieDto editBulletinPaie)
         {
@@ -138,6 +141,7 @@ namespace PersonnelASPnetCoreAPI.Controllers
             return NoContent();
         }
 
+        [Authorize(Roles = Role.Admin)]
         [HttpDelete("{numeroBulletin}")]
         public async Task<IActionResult> Delete([FromRoute]string numeroBulletin)
         {

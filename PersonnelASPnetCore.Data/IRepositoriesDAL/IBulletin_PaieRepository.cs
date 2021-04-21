@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 
 namespace PersonnelASPnetCore.Data.IRepositoriesDAL
 {
-    public interface IBulletin_PaieRepository
+    //public interface IBulletin_PaieRepository<T> where T : class
+    public interface IBulletin_PaieRepository<T> : IRepositoryBaseAsync<T> where T : class
+
     {
         IEnumerable<BULLETIN_PAIE> GetAllBulletinPaiesPS();
         Task<BULLETIN_PAIE> GetBulletinPaiePSbyNumero(string NumeroBulletin);

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using PersonnelASPnetCore.Data.Infrastructure;
 using PersonnelASPnetCore.Data.IRepositoriesDAL;
 using PersonnelASPnetCore.Domaine.Entities;
@@ -7,21 +8,36 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace PersonnelASPnetCore.Data.RepositoriesDAL
 {
-    public class EmployeRepository : RepositoryBase<EMPLOYE>, IEmployeRepository
+    public class EmployeRepository<T> : IEmployeRepository<T> where T : class
     {
         #region Configuration ConnectionString + DI
         //put your connection string here
+        private readonly AppSettings _appSettings;
         IConfiguration _ConnectionString;
+        protected ARTIPERSONNEL_SOC001Context _repositoryContext { get; set; }
 
-        public EmployeRepository(IConfiguration configuration, ARTIPERSONNEL_SOC001Context repositoryContext)
-            : base(repositoryContext)
+        public EmployeRepository(IConfiguration configuration, ARTIPERSONNEL_SOC001Context repositoryContext, IOptions<AppSettings> appSettings)
         {
+            _repositoryContext = repositoryContext;
             _ConnectionString = configuration;
+            _appSettings = appSettings.Value;
+        }
+
+
+        public void Add(T entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> CountAsync()
+        {
+            throw new NotImplementedException();
         }
         #endregion
         public async Task CreateEmployePSAsync(EMPLOYE Employe)
@@ -96,6 +112,16 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
             }
         }
 
+        public void Delete(Expression<Func<T, bool>> where)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(T entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public void DeleteEmployePS(string id)
         {
             var connectionString = _ConnectionString.GetSection("ConnectionStrings").GetSection("DefaultConnection").Value;
@@ -111,6 +137,61 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
+        }
+
+        public Task<IEnumerable<T>> FindAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<T>> FindALLByConditionAync(Expression<Func<T, bool>> match)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<T> FindByCondition(Expression<Func<T, bool>> expression)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<T>> FindByConditionAync(Expression<Func<T, bool>> match)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<T> FindByIDAsync(long id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<T> FindByName(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public T Get(Expression<Func<T, bool>> where)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<T> Get(Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includeProperties = "", string includeProperties2 = "", string includeProperties3 = "")
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<T> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<T>> GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<T>> GetAllAsynchrone()
+        {
+            throw new NotImplementedException();
         }
 
         public IEnumerable<EMPLOYE> GetAllEmployesPS()
@@ -129,11 +210,13 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
                 while (sdr.Read())
                 {
                     EMPLOYE Employe = new EMPLOYE();
+
                     Employe.CodeEmploye = sdr["CodeEmploye"].ToString();
                     Employe.MatriculeEmploye = sdr["MatriculeEmploye"].ToString();
                     Employe.CodeAppellation = sdr["CodeAppellation"].ToString();
+                    Employe.NomEmploye = sdr["NomEmploye"].ToString();
                     Employe.CIN = sdr["Cin"].ToString();
-                    Employe.DateCIN = Convert.ToDateTime(sdr["DateCin"]);
+                    Employe.DateCIN = Convert.ToDateTime(sdr["DateCIN"]);
                     Employe.Passeport = sdr["Passeport"].ToString();
                     Employe.DatePasseport = Convert.ToDateTime(sdr["DatePasseport"]);
                     Employe.DateEntree = Convert.ToDateTime(sdr["DateEntree"]);
@@ -183,8 +266,8 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
                     Employe.AnneeImpotAnterieur = sdr["AnneeImpotAnterieur"].ToString();
                     Employe.Cavis = Convert.ToBoolean(sdr["Cavis"]);
                     Employe.Suffixe = sdr["Suffixe"].ToString();
-                    Employe.SituationFamilialle = (int)sdr["SituationFamilialle"];
-
+                    Employe.SituationFamilialle = (int)sdr["SituationFamilialle"];              
+                
                     lstEmployes.Add(Employe);
                 }
                 con.Close();
@@ -192,11 +275,22 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
             return lstEmployes;
         }
 
+        public T GetById(long id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public T GetById(string id)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<EMPLOYE> GetEmployeByIDAsync(string codeEmp)
         {
-         var Employee = await FindByConditionAync(o => o.CodeEmploye.Equals(codeEmp));
-            return Employee.DefaultIfEmpty(new EMPLOYE())
-                    .FirstOrDefault();
+            //var Employee = await FindByConditionAync(o => o.CodeEmploye.Equals(codeEmp));
+            //   return Employee.DefaultIfEmpty(new EMPLOYE())
+            //           .FirstOrDefault();
+            throw new NotImplementedException();
         }
 
         public EMPLOYE GetEmployeDetailsPS(string id)
@@ -277,7 +371,6 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
             return Employe;
         }
 
-
         public EMPLOYE GetEmployesPSbyID(string codeEmp)
         {
             var connectionString = _ConnectionString.GetSection("ConnectionStrings").GetSection("DefaultConnection").Value;
@@ -357,6 +450,11 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
             return Employe;
         }
 
+        public IEnumerable<T> GetMany(Expression<Func<T, bool>> where = null, Expression<Func<T, bool>> orderBy = null)
+        {
+            throw new NotImplementedException();
+        }
+
         public void IncrementConnectionPS(string codeEmp, int connection)
         {
             var connectionString = _ConnectionString.GetSection("ConnectionStrings").GetSection("DefaultConnection").Value;
@@ -374,6 +472,26 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
+        }
+
+        public void Save()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task SaveAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<T> SaveAsync(T entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(T entity)
+        {
+            throw new NotImplementedException();
         }
 
         public void UpdateEmployePS(EMPLOYE Employe)

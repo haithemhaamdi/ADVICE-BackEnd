@@ -38,6 +38,9 @@ namespace PersonnelASPnetCore.ModelEdmx
         public byte[] PasswordSalt { get; set; }
         public string Token { get; set; }
         public string IpAddress { get; set; }
+        public string AdresseMail { get; set; }
+        public string Picture_URL { get; set; }
+        public byte[] Picture { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CONNECTIONS_HISTORY> CONNECTIONS_HISTORY { get; set; }

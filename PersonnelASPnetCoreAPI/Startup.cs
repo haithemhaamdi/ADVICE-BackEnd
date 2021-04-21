@@ -23,17 +23,17 @@ using Microsoft.IdentityModel.Tokens;
 using PersonnelASPnetCore.Data;
 using PersonnelASPnetCore.Data.Helper;
 using PersonnelASPnetCore.Data.Infrastructure;
-using PersonnelASPnetCore.Data.IRepositories;
 using PersonnelASPnetCore.Data.IRepositoriesDAL;
 using PersonnelASPnetCore.Data.Logger;
-using PersonnelASPnetCore.Data.Repositories;
 using PersonnelASPnetCore.Data.RepositoriesDAL;
 using PersonnelASPnetCore.Domaine.Entities;
 using PersonnelASPnetCore.Service.ServiceManagmentImplementation;
 using PersonnelASPnetCore.Service.ServiceManagmentInterface;
 
+
 namespace PersonnelASPnetCoreAPI
 {
+
     public class Startup
     {
         private readonly IWebHostEnvironment _env;
@@ -41,7 +41,6 @@ namespace PersonnelASPnetCoreAPI
         //public IConfiguration _configuration { get; }
         private readonly IUSERService uService;
         private readonly IRoleRepository rService;
-
 
         public Startup(IWebHostEnvironment env, IConfiguration configuration)
         {
@@ -62,13 +61,13 @@ namespace PersonnelASPnetCoreAPI
 
             services.AddSession();
 
-                //redirect to login page after session timeout RSS
-                services.AddSession(options =>
-                {
-                    options.IdleTimeout = TimeSpan.FromSeconds(3);
-                    options.Cookie.HttpOnly = true;
-                    options.Cookie.Name = ".ToolsAppSession";
-                });
+            //redirect to login page after session timeout RSS
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromSeconds(3);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.Name = ".ToolsAppSession";
+            });
             services.ConfigureApplicationCookie(options =>
             {
                 // Cookie settings
@@ -241,25 +240,86 @@ namespace PersonnelASPnetCoreAPI
             #endregion
 
             #region IRepositoriesDAL/RepositoriesDAL
-            services.AddScoped<PersonnelASPnetCore.Data.IRepositoriesDAL.IBanqueRepository, PersonnelASPnetCore.Data.RepositoriesDAL.BanqueRepository>();
-            services.AddScoped<PersonnelASPnetCore.Data.IRepositoriesDAL.IEmployeRepository, PersonnelASPnetCore.Data.RepositoriesDAL.EmployeRepository>();
-            services.AddScoped<IBulletin_PaieRepository, Bulletin_PaieRepository>();
 
+
+            #endregion
+
+            services.AddScoped<IRoleRepository, RoleRepository>();
             services.AddScoped<IUserRepository<USER>, UserRepository<USER>>();
             services.AddScoped<IConnectionHistoryRepository<CONNECTIONS_HISTORY>, ConnectionHistoryRepository<CONNECTIONS_HISTORY>>();
+            services.AddScoped<IActiviteRepository, ActiviteRepository>();
+            //services.AddScoped<IAppellationRepository, AppellationRepository>();
+            //services.AddScoped<IAvancement_DetailRepository, Avancement_DetailRepository>();
+            //services.AddScoped<IAvancementRepository, AvancementRepository>();
+            //services.AddScoped<IBanqueRepository, BanqueRepository>();
+            //services.AddScoped<IBanqueVirementRepository, BanqueVirementRepository>();
+            //services.AddScoped<IBaremeImportRepository, BaremeImportRepository>();
+            //services.AddScoped<IBaremeSMIGRepository, BaremeSMIGRepository>();
+            //services.AddScoped<IBordereauRepository, BordereauRepository>();
+            services.AddScoped<IBulletin_PaieRepository<BULLETIN_PAIE>, Bulletin_PaieRepository<BULLETIN_PAIE>>();
+            services.AddScoped<IBulletinPaieDetailRepository<BULLETIN_PAIE_DETAIL>, BulletinPaieDetailRepository<BULLETIN_PAIE_DETAIL>>();
+            //services.AddScoped<ICompteComptableRepository, ICompteComptableRepository>();
+            //services.AddScoped<IDeclarationCNSSDetailRepository, IDeclarationCNSSDetailRepository>();
+            //services.AddScoped<IDeclarationCNSSRepository, IDeclarationCNSSRepository>();
+            //services.AddScoped<IDeclarationCNSSTauxEmployeurRepository, IDeclarationCNSSTauxEmployeurRepository>();
+            //services.AddScoped<IDeclarationEmployeurRepository, IDeclarationEmployeurRepository>();
+            //services.AddScoped<IDecompteMonnaieRepository, IDecompteMonnaieRepository>();
+            //services.AddScoped<IDepartementRepository, IDepartementRepository>();
+            //services.AddScoped<IEcritureDetailRepository, IEcritureDetailRepository>();
+            //services.AddScoped<IEcritureOuvertureRepository, IEcritureOuvertureRepository>();
+            //services.AddScoped<IEcritureRepository, IEcritureRepository>();
+            //services.AddScoped<IEmployeAbsenceRepository, IEmployeAbsenceRepository>();
+            //services.AddScoped<IEmployeAChargeRepository, IEmployeAChargeRepository>();
+            //services.AddScoped<IEmployeAffichageGrilleRepository, IEmployeAffichageGrilleRepository>();
+            //services.AddScoped<IEmployeAjustementCongeRepository, IEmployeAjustementCongeRepository>();
+            //services.AddScoped<IEmployeAvanceRepository, IEmployeAvanceRepository>();
+            //services.AddScoped<IEmployeCongeRepository, IEmployeCongeRepository>();
+            //services.AddScoped<IEmployeContratRepository, IEmployeContratRepository>();
+            //services.AddScoped<IEmployeCorrespondanceRepository, IEmployeCorrespondanceRepository>();
+            //services.AddScoped<IEmployeDeductionRepository, IEmployeDeductionRepository>();
+            //services.AddScoped<IEmployeDesciplineRepository, IEmployeDesciplineRepository>();
+            //services.AddScoped<IEmployeDocumentRepository, IEmployeDocumentRepository>();
+            //services.AddScoped<IEmployeFonctionRepository, IEmployeFonctionRepository>();
+            //services.AddScoped<IEmployeFormationRepository, IEmployeFormationRepository>();
+            //services.AddScoped<IEmployeObservationRepository, IEmployeObservationRepository>();
+            //services.AddScoped<IEmployePretRepository, IEmployePretRepository>();
+            services.AddScoped<IEmployeRepository<EMPLOYE>, EmployeRepository<EMPLOYE>>();
+            //services.AddScoped<IEmployeRubriqueRepository, IEmployeRubriqueRepository>();
+            //services.AddScoped<IEmployeSituationCongeSpecialRepository, IEmployeSituationCongeSpecialRepository>();
+            //services.AddScoped<IEmployeTypeContratRepository, IEmployeTypeContratRepository>();
+            //services.AddScoped<IEmployeTypePeriodeRepository, IEmployeTypePeriodeRepository>();
+            //services.AddScoped<IEmployeTypePretRepository, IEmployeTypePretRepository>();
+            //services.AddScoped<IEmployeVentilationRepository, IEmployeVentilationRepository>();
+            //services.AddScoped<IGilleDetailRepository, IGilleDetailRepository>();
+            //services.AddScoped<IIMPCavisRepository, IIMPCavisRepository>();
+            //services.AddScoped<IIMPDeclarationAssuranceRepository, IIMPDeclarationAssuranceRepository>();
+            //services.AddScoped<IIMPDeclarationMensuelImpotRepository, IIMPDeclarationMensuelImpotRepository>();
+            //services.AddScoped<IIMPFicheAnnuellePaieRepository, IIMPFicheAnnuellePaieRepository>();
+            //services.AddScoped<IJourFerierRepository, IJourFerierRepository>();
+            //services.AddScoped<IJournalComptableRepository, IJournalComptableRepository>();
+            //services.AddScoped<IListeRapportRepository, IListeRapportRepository>();
+            //services.AddScoped<IModeleCorrespondanceRepository, IModeleCorrespondanceRepository>();
+            //services.AddScoped<IModelePaieDetailRepository, IModelePaieDetailRepository>();
+            //services.AddScoped<IModelePaieRepository, IModelePaieRepository>();
+            //services.AddScoped<IModePaiementRepository, IModePaiementRepository>();
+            //services.AddScoped<INaturePaiementRepository, INaturePaiementRepository>();
+            //services.AddScoped<IParametreComptabiliteRepository, IParametreComptabiliteRepository>();
+            //services.AddScoped<IParametrePointageRepository, IParametrePointageRepository>();
+            //services.AddScoped<IPlanPaieDetailRepository, IPlanPaieDetailRepository>();
+            //services.AddScoped<IPlanPaieRepository, IPlanPaieRepository>();
+            //services.AddScoped<IPointageRepository, IPointageRepository>();
+            //services.AddScoped<IRoleRepository, IRoleRepository>();
+            //services.AddScoped<IRubriqueRepository, IRubriqueRepository>();
+            //services.AddScoped<ISequenceRepository, ISequenceRepository>();
+            //services.AddScoped<ISiteRepository, ISiteRepository>();
+            //services.AddScoped<ISituationCongeRepository, ISituationCongeRepository>();
+            ////services.AddScoped<ITypeIndemniteRepository, TypeIndemniteRepository>();
+            //services.AddScoped<ITypeRubriqueRepository, ITypeRubriqueRepository>();
+            services.AddScoped<IVirementDetailRepository<VIREMENT_DETAIL>, VirementDetailRepository<VIREMENT_DETAIL>>();
+            //services.AddScoped<IVirementRepository, IVirementRepository>();
+            #region 
 
-            
-            services.AddScoped<IRoleRepository, RoleRepository>();
             #endregion
-
-            #region IRepositories/Repositories
-            services.AddScoped<PersonnelASPnetCore.Data.IRepositories.IEmployeRepository, PersonnelASPnetCore.Data.Repositories.EmployeRepository>();
-            services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<PersonnelASPnetCore.Data.IRepositoriesDAL.IEmployeRepository, PersonnelASPnetCore.Data.RepositoriesDAL.EmployeRepository>();
-            services.AddScoped<IBulletinPaieRepository, PersonnelASPnetCore.Data.Repositories.BulletinPaieRepository>();
-            services.AddScoped<IUserRepository, UserRepository>();
-            #endregion
-
             #region Authorization
             services.AddAuthorization(options => options.AddPolicy("ADMIN", builder =>
             {

@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="DEPARTEMENT_Dto\DepatementResponseDto.cs~RF77c8b9e.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\PersonnelASPnetCore.Domaine\PersonnelASPnetCore.Domaine.csproj" />
   </ItemGroup>
 

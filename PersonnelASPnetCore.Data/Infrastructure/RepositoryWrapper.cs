@@ -191,7 +191,7 @@ namespace PersonnelASPnetCore.Data.Infrastructure
             }
         }
 
-        public ITypePeriodeRepository EMPLOYE_TYPE_PERIODERepo
+        public ITypePeriodeRepository TYPE_PERIODERepo
         {
             get
             {

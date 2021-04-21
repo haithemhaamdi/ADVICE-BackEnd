@@ -1,4 +1,5 @@
 ﻿
+using PersonnelASPnetCore.Data.Infrastructure;
 using PersonnelASPnetCore.Domaine.Entities;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PersonnelASPnetCore.Data.IRepositoriesDAL
 {
-    public interface IEmployeRepository
+    public interface IEmployeRepository<T> : IRepositoryBaseAsync<T> where T : class
     {
         IEnumerable<EMPLOYE> GetAllEmployesPS();
         EMPLOYE GetEmployesPSbyID(string codeEmp);

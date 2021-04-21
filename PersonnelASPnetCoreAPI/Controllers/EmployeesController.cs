@@ -13,27 +13,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using PersonnelASPnetCore.Dto.EMPLOYE_Dto;
+using Microsoft.AspNetCore.Authorization;
+using PersonnelASPnetCore.Dto.ROLE_Dto;
 
 namespace PersonnelASPnetCoreAPI.Controllers
 {
+    //[Authorize]
+    [Produces("application/json")]
     [ApiController]
-    [Route("api/employees")]
+    [Route("api/[controller]")]
     public class EmployeesController : ControllerBase
     {
         #region Injecting a Constructor
 
         private readonly ARTIPERSONNEL_SOC001Context _context;
         private readonly IRepositoryWrapper _repository;
-        private readonly IEmployeRepository _employeRepo;
+        private readonly IEmployeRepository<EMPLOYE> _employeRepo;
         private readonly IMapper _mapper;
         private readonly ILoggerManager _loggerManager;
         private readonly ILogger __logger;
         private readonly ILogger<EmployeesController> _loggerController;
 
-        public EmployeesController(IRepositoryWrapper repository, IEmployeRepository repo, ARTIPERSONNEL_SOC001Context context, IMapper mapper, ILoggerManager Nlogger, ILogger<EmployeesController> logger, ILoggerFactory loggerfactory)
-        {  
+        public EmployeesController(IRepositoryWrapper repository, IEmployeRepository<EMPLOYE> repo, ARTIPERSONNEL_SOC001Context context, IMapper mapper, ILoggerManager Nlogger, ILogger<EmployeesController> logger, ILoggerFactory loggerfactory)
+        {
 
-        logger.LogInformation("created EmployeesController");
+            logger.LogInformation("created EmployeesController");
             __logger = loggerfactory.CreateLogger("PersonnelASPnetCoreApiApplication.Controllers");
 
             _loggerController = logger;
@@ -47,6 +51,7 @@ namespace PersonnelASPnetCoreAPI.Controllers
         }
         #endregion
 
+        //[Authorize(Roles = Role.Admin)]
         [HttpGet()]
         public ActionResult<IEnumerable<EMPLOYEdto>> Get()
         {
@@ -58,6 +63,7 @@ namespace PersonnelASPnetCoreAPI.Controllers
             return Ok(_mapper.Map<IEnumerable<EmployeResponseDto>>(EmployeesFromRepo));
         }
 
+        //[Authorize(Roles = Role.Admin)]
         [HttpGet("{codeEmp}")]
         public IActionResult Get(string codeEmp)
         {
@@ -90,7 +96,7 @@ namespace PersonnelASPnetCoreAPI.Controllers
                 _loggerController.LogWarning($"Employee with id: {codeEmp}, hasn't been found in db.");
                 return NotFound();
             }
-                return Ok(_mapper.Map<IEnumerable<EmployeResponseDto>>(EmployeeFromRepo));
+            return Ok(_mapper.Map<IEnumerable<EmployeResponseDto>>(EmployeeFromRepo));
         }
 
         //[HttpGet("{codeEmp}", Name = "GetEmployee")]
