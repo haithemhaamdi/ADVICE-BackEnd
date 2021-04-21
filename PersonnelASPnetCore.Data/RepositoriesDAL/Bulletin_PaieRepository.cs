@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using PersonnelASPnetCore.Data.Infrastructure;
 using PersonnelASPnetCore.Data.IRepositoriesDAL;
 using PersonnelASPnetCore.Domaine.Entities;
@@ -6,12 +7,17 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace PersonnelASPnetCore.Data.RepositoriesDAL
 {
-    public class Bulletin_PaieRepository : RepositoryBase<BULLETIN_PAIE>, IBulletin_PaieRepository
+    public class Bulletin_PaieRepository <T> : IBulletin_PaieRepository<T> where T : class
+
+
+        //RepositoryBase<BULLETIN_PAIE>, IBulletin_PaieRepository
     {
         #region Configuration ConnectionString + DI
         //put your connection string here
@@ -19,12 +25,15 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
         /// Utilisé pour générer des paramètres de configuration basés sur des clés/valeurs 
         /// à utiliser dans une application.
         /// </summary>
+        private readonly AppSettings _appSettings;
         IConfiguration _ConnectionString;
+        protected ARTIPERSONNEL_SOC001Context _repositoryContext { get; set; }
 
-        public Bulletin_PaieRepository(IConfiguration configuration, ARTIPERSONNEL_SOC001Context repositoryContext)
-            : base(repositoryContext)
+        public Bulletin_PaieRepository(IConfiguration configuration, ARTIPERSONNEL_SOC001Context repositoryContext, IOptions<AppSettings> appSettings)
         {
+            _repositoryContext = repositoryContext;
             _ConnectionString = configuration;
+            _appSettings = appSettings.Value;
         }
         #endregion
 
@@ -118,7 +127,6 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
                 cmd.CommandType = CommandType.StoredProcedure;
                 connection.Open();
                 SqlDataReader sdr = cmd.ExecuteReader();
-
                 while (sdr.Read())
                 {
                     BULLETIN_PAIE BulletinPaie = new BULLETIN_PAIE();
@@ -515,6 +523,116 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
                 cmd.ExecuteNonQuery();
                 connection.Close();
             }
+        }
+
+        public Task<int> CountAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<T>> FindAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<T>> FindALLByConditionAync(Expression<Func<T, bool>> match)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<T>> FindByConditionAync(Expression<Func<T, bool>> match)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<T> FindByIDAsync(long id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<T>> GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<T>> GetAllAsynchrone()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<T> FindByName(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task SaveAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<T> SaveAsync(T entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Add(T entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(Expression<Func<T, bool>> where)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(T entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public T Get(Expression<Func<T, bool>> where)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<T> Get(Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includeProperties = "", string includeProperties2 = "", string includeProperties3 = "")
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<T> FindByCondition(Expression<Func<T, bool>> expression)
+        {
+            throw new NotImplementedException();
+        }
+
+        public T GetById(long id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public T GetById(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<T> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<T> GetMany(Expression<Func<T, bool>> where = null, Expression<Func<T, bool>> orderBy = null)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(T entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Save()
+        {
+            throw new NotImplementedException();
         }
     }
 }

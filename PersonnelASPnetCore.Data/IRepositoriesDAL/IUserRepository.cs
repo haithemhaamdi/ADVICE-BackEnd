@@ -10,7 +10,7 @@ namespace PersonnelASPnetCore.Data.IRepositoriesDAL
     public interface IUserRepository<T> where T : class
     {
         //USER Authenticate(string username, string password, string ipAddress);
-        AuthenticateResponseDto Authenticate(string username, string password, string ipAddress, string message, bool isAuthenticated);
+        AuthenticateResponseDto Authenticate(string username, string password, string ipAddress, string message, bool isAuthenticated, bool isDisconnected);
         AuthenticateResponseDto RefreshToken(string token, string ipAddress);
         bool RevokeToken(string token, string ipAddress);
         IEnumerable<USER> GetAllUsersPS();

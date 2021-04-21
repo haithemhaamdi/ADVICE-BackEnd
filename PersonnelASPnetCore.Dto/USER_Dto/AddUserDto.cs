@@ -17,6 +17,7 @@ namespace PersonnelASPnetCore.Dto.USER_Dto
         [Required]
         public string username { get; set; }
         public string login { get; set; }
+        public string AdresseMail { get; set; }
         [Required]
         public string password { get; set; }
         public int connections { get; set; }
@@ -29,6 +30,8 @@ namespace PersonnelASPnetCore.Dto.USER_Dto
         public byte[] passwordHash { get; set; }
         public byte[] passwordSalt { get; set; }
         public string IpAddress { get; set; }
+        public string picture_URL { get; set; }
+        public byte[] picture { get; set; }
 
     }
 }

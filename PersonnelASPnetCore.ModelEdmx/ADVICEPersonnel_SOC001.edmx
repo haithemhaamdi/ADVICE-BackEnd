@@ -768,21 +768,6 @@ warning 6002: The table/view 'ARTIPERSONNEL_SOC001.dbo.IMP_DECLARATION_ASSURANCE
           <Property Name="TotalEmploye" Type="decimal" Precision="18" Scale="3" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'ARTIPERSONNEL_SOC001.dbo.IMP_DECLARATION_MENSUEL_IMPOT' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="IMP_DECLARATION_MENSUEL_IMPOT">
-          <Property Name="TauxTFP" Type="int" />
-          <Property Name="TauxFOPROLOS" Type="int" />
-          <Property Name="Mois" Type="int" />
-          <Property Name="Annee" Type="int" />
-          <Property Name="BaseRetenueSource" Type="decimal" Precision="18" Scale="3" />
-          <Property Name="MontantImpot" Type="decimal" Precision="18" Scale="3" />
-          <Property Name="MontantRedevanceCompensation" Type="decimal" Precision="18" Scale="3" />
-          <Property Name="BaseTFP" Type="decimal" Precision="18" Scale="3" />
-          <Property Name="MontantTFP" Type="decimal" Precision="18" Scale="3" />
-          <Property Name="BaseFOPROLOS" Type="decimal" Precision="18" Scale="3" />
-          <Property Name="MontantFOPROLOS" Type="decimal" Precision="18" Scale="3" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'ARTIPERSONNEL_SOC001.dbo.IMP_FICHE_ANNUELLE_PAIE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="IMP_FICHE_ANNUELLE_PAIE">
           <Key>
@@ -1150,6 +1135,9 @@ warning 6002: The table/view 'ARTIPERSONNEL_SOC001.dbo.SITUATION_CONGE_SPECIAL' 
           <Property Name="PasswordSalt" Type="varbinary(max)" />
           <Property Name="Token" Type="varchar(max)" />
           <Property Name="IpAddress" Type="varchar" MaxLength="15" />
+          <Property Name="AdresseMail" Type="varchar" MaxLength="50" />
+          <Property Name="Picture_URL" Type="varchar(max)" />
+          <Property Name="Picture" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="VIREMENT">
           <Key>
@@ -1701,11 +1689,6 @@ warning 6002: The table/view 'ARTIPERSONNEL_SOC001.dbo.Vue_SoldeActuel_Conge' do
           <Property Name="DroitConge" Type="decimal" Precision="38" Scale="3" />
           <Property Name="SoldeConge" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'ARTIPERSONNEL_SOC001.dbo.Vue_SPOT' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Vue_SPOT">
-          <Property Name="TexteNotification" Type="varchar" MaxLength="254" />
-        </EntityType>-->
         <Association Name="FK_BORDEREAU_EMPLOYE">
           <End Role="EMPLOYE" Type="Self.EMPLOYE" Multiplicity="1" />
           <End Role="BORDEREAU" Type="Self.BORDEREAU" Multiplicity="*" />
@@ -4409,6 +4392,9 @@ warning 6013: The table/view 'ARTIPERSONNEL_SOC001.dbo.Vue_SPOT' does not have a
           <NavigationProperty Name="EMPLOYE" Relationship="Self.FK_USER_EMPLOYE" FromRole="USER" ToRole="EMPLOYE" />
           <NavigationProperty Name="REFRESH_TOKEN" Relationship="Self.FK_REFRESH_TOKEN_USER" FromRole="USER" ToRole="REFRESH_TOKEN" />
           <NavigationProperty Name="ROLE" Relationship="Self.FK_USER_ROLE" FromRole="USER" ToRole="ROLE" />
+          <Property Name="AdresseMail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Picture_URL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="VIREMENT">
           <Key>
@@ -7570,6 +7556,9 @@ warning 6013: The table/view 'ARTIPERSONNEL_SOC001.dbo.Vue_SPOT' does not have a
           <EntitySetMapping Name="USER">
             <EntityTypeMapping TypeName="ARTIPERSONNEL_SOC001Model.USER">
               <MappingFragment StoreEntitySet="USER">
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="Picture_URL" ColumnName="Picture_URL" />
+                <ScalarProperty Name="AdresseMail" ColumnName="AdresseMail" />
                 <ScalarProperty Name="CodeEmploye" ColumnName="CodeEmploye" />
                 <ScalarProperty Name="Login" ColumnName="Login" />
                 <ScalarProperty Name="Password" ColumnName="Password" />

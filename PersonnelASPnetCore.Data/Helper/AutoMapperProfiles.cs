@@ -9,6 +9,7 @@ using PersonnelASPnetCore.Dto.BULLETIN_PAIE_Dto;
 using PersonnelASPnetCore.Dto.EMPLOYE_Dto;
 using PersonnelASPnetCore.Dto.DTO;
 using PersonnelASPnetCore.Dto.CONNECTIONS_HISTORY_Dto;
+using PersonnelASPnetCore.Dto.BULLETIN_PAIE_DETAIL_Dto;
 
 namespace PersonnelASPnetCore.Data.Helper
 {
@@ -23,8 +24,9 @@ namespace PersonnelASPnetCore.Data.Helper
             CreateMap<UpdateUserDto, USER>();
             CreateMap<UserTokenDto, USER>();
 
+            CreateMap<BULLETIN_PAIE_DETAIL, BulletinPaieDetailResponseDto>().ReverseMap();
 
-            
+
             CreateMap<AuthenticateResponseDto, USER>();
             CreateMap<AuthenticateRequestDto, USER>();
             CreateMap<RevokeTokenRequestDto, USER>();
@@ -44,7 +46,8 @@ namespace PersonnelASPnetCore.Data.Helper
 
             CreateMap<AddBulletinPaieDto, BULLETIN_PAIE>().ReverseMap();
             CreateMap<EditBulletinPaieDto, BULLETIN_PAIE>().ReverseMap();
-            CreateMap<BULLETIN_PAIE, BulletinPaieResponseDto>().ReverseMap();
+
+            CreateMap<BulletinPaieResponseDto, BULLETIN_PAIE>().ReverseMap();
 
 
             CreateMap<AddEmployeDto, EMPLOYE>().ReverseMap();

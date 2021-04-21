@@ -248,7 +248,7 @@ namespace PersonnelASPnetCoreAPI.Controllers
         public IActionResult Authenticate([FromBody]AuthenticateRequestDto model)
         {
 
-            var user = _userRepo.Authenticate(model.username, Helper.base64Encode(model.password), GetIpAddress(), model.message, model.isAuthenticated);
+            var user = _userRepo.Authenticate(model.username, Helper.base64Encode(model.password), GetIpAddress(), model.message, model.isAuthenticated, model.isDisconnected);
             if (user == null)
             {
                 model.isAuthenticated = false;
@@ -271,14 +271,16 @@ namespace PersonnelASPnetCoreAPI.Controllers
                     new Claim(ClaimTypes.Name, user.CodeEmploye.ToString()),
                     new Claim(ClaimTypes.Role, _role.ToString())
                 }),
-                Expires = DateTime.Now.AddMinutes(2),
+                Expires = DateTime.Now.AddMinutes(10),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
             var tokenString = tokenHandler.WriteToken(token);
 
             model.isAuthenticated = true;
-            //model.message = "Authenticate Successfully";
+            model.message = "Authenticate Successfully";
+            model.isDisconnected = false;
+
 
             try
             {
@@ -326,10 +328,16 @@ namespace PersonnelASPnetCoreAPI.Controllers
                 Username = user.Username,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
+                AdresseMail = user.AdresseMail,
                 Role = _role,
                 Token = tokenString,
-                AuthData = user.AuthData
-            });
+                AuthData = user.AuthData,
+                Picture_URL = user.Picture_URL,
+                Picture = user.Picture,
+                IsAuthenticated = user.IsAuthenticated,
+                IsDisconnected = user.IsDisconnected,
+
+        });
         }
 
         // POST: api/Users/register

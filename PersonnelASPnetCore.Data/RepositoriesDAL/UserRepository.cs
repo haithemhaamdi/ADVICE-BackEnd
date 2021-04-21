@@ -351,8 +351,10 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
                         User.Username = sdr["Username"].ToString();
                         User.FirstName = sdr["FirstName"].ToString();
                         User.LastName = sdr["LastName"].ToString();
+                        User.AdresseMail = sdr["AdresseMail"].ToString();
                         User.MacAddress = sdr["MacAddress"].ToString();
                         User.Status = Convert.ToBoolean(sdr["Status"]);
+                        User.Picture_URL = sdr["Picture_URL"].ToString();
                         User.ModifyDate = Convert.ToDateTime(sdr["ModifyDate"]);
                         User.CreateDate = Convert.ToDateTime(sdr["CreateDate"]);
                         User.Connections = Convert.ToInt32(sdr["Connections"]);
@@ -387,7 +389,7 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
 
         public AuthenticateResponseDto Authenticate(
             string username, string password,
-            string ipAddress, string message, bool isAuthenticated)
+            string ipAddress, string message, bool isAuthenticated, bool isDisconnected)
         {
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
@@ -398,6 +400,7 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
             if (user == null)
             {
                 isAuthenticated = false;
+                isDisconnected = true;
                 message = $"No Accounts Registered with {username}.";
                 return null;
             }
@@ -405,6 +408,7 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
             if (!VerifyPasswordHash(Helper.Helper.base64Decode(password), user.PasswordHash, user.PasswordSalt))
                 return null;
             isAuthenticated = true;
+            isDisconnected = false;
 
             // authentication successful so generate jwt and refresh tokens
 
@@ -424,7 +428,7 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
             _repositoryContext.SaveChanges();
 
             //return user;
-            return new AuthenticateResponseDto(user, user.Token, refreshToken.Token, refreshToken.Expires.Value, "Token refreshed", true);
+            return new AuthenticateResponseDto(user, user.Token, refreshToken.Token, refreshToken.Expires.Value, "Token refreshed", true,false);
         }
 
         private static void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
@@ -492,7 +496,7 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
             // generate new jwt
             var jwtToken = generateJwtToken(user);
 
-            return new AuthenticateResponseDto(user, jwtToken, newRefreshToken.Token, newRefreshToken.Expires.Value, "Token refreshed", true);
+            return new AuthenticateResponseDto(user, jwtToken, newRefreshToken.Token, newRefreshToken.Expires.Value, "Token refreshed", true, false);
         }
         public bool RevokeToken(string token, string ipAddress)
         {

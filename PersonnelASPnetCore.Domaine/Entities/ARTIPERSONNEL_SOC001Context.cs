@@ -2996,6 +2996,10 @@ namespace PersonnelASPnetCore.Domaine.Entities
                     .HasMaxLength(10)
                     .IsUnicode(false);
 
+                entity.Property(e => e.AdresseMail)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.AuthData).IsUnicode(false);
 
                 entity.Property(e => e.CodeRole)
@@ -3022,6 +3026,8 @@ namespace PersonnelASPnetCore.Domaine.Entities
                     .IsUnicode(false);
 
                 entity.Property(e => e.ModifyDate).HasColumnType("date");
+
+                entity.Property(e => e.Picture_URL).IsUnicode(false);
 
                 entity.Property(e => e.Token).IsUnicode(false);
 

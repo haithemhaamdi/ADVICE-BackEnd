@@ -1,5 +1,6 @@
 ﻿using System;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PersonnelASPnetCore.Data.Infrastructure;
@@ -9,6 +10,7 @@ using PersonnelASPnetCore.Domaine.Entities;
 
 namespace PersonnelASPnetCoreAPI.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/banques")]
     public class BanquesController : ControllerBase
