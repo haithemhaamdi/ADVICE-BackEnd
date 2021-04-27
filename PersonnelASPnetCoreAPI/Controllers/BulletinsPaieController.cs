@@ -97,6 +97,8 @@ namespace PersonnelASPnetCoreAPI.Controllers
                 return NotFound();
             }
             return Ok(_mapper.Map<BulletinPaieResponseDto>(BulletinPaieFromRepo));
+            //a ferifier dans BulletinPaieResponseDto et regarder le mapping 
+            //return Ok(BulletinPaieFromRepo);
         }
 
         [Authorize(Roles = Role.Admin)]

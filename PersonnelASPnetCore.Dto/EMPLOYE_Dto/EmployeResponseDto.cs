@@ -31,7 +31,7 @@ namespace PersonnelASPnetCore.Dto.EMPLOYE_Dto
             POINTAGE = new HashSet<POINTAGE>();
             VIREMENT_DETAIL = new HashSet<VIREMENT_DETAIL>();
         }
-        [Required]
+
         public string CodeEmploye { get; set; }
         public string MatriculeEmploye { get; set; }
         public string CodeAppellation { get; set; }

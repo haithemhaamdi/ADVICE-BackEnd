@@ -1138,6 +1138,8 @@ warning 6002: The table/view 'ARTIPERSONNEL_SOC001.dbo.SITUATION_CONGE_SPECIAL' 
           <Property Name="AdresseMail" Type="varchar" MaxLength="50" />
           <Property Name="Picture_URL" Type="varchar(max)" />
           <Property Name="Picture" Type="varbinary(max)" />
+          <Property Name="IsAuthenticated" Type="bit" />
+          <Property Name="IsDisconnected" Type="bit" />
         </EntityType>
         <EntityType Name="VIREMENT">
           <Key>
@@ -4395,6 +4397,8 @@ warning 6002: The table/view 'ARTIPERSONNEL_SOC001.dbo.Vue_SoldeActuel_Conge' do
           <Property Name="AdresseMail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Picture_URL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="IsAuthenticated" Type="Boolean" />
+          <Property Name="IsDisconnected" Type="Boolean" />
         </EntityType>
         <EntityType Name="VIREMENT">
           <Key>
@@ -7556,6 +7560,8 @@ warning 6002: The table/view 'ARTIPERSONNEL_SOC001.dbo.Vue_SoldeActuel_Conge' do
           <EntitySetMapping Name="USER">
             <EntityTypeMapping TypeName="ARTIPERSONNEL_SOC001Model.USER">
               <MappingFragment StoreEntitySet="USER">
+                <ScalarProperty Name="IsDisconnected" ColumnName="IsDisconnected" />
+                <ScalarProperty Name="IsAuthenticated" ColumnName="IsAuthenticated" />
                 <ScalarProperty Name="Picture" ColumnName="Picture" />
                 <ScalarProperty Name="Picture_URL" ColumnName="Picture_URL" />
                 <ScalarProperty Name="AdresseMail" ColumnName="AdresseMail" />

@@ -24,3 +24,13 @@ D:\HAITHEM\source\AzureDevOps\ADVICE_NetCore\PersonnelASPnetCore.Domaine\obj\Deb
 D:\HAITHEM\source\AzureDevOps\ADVICE_NetCore\PersonnelASPnetCore.Domaine\obj\Debug\netcoreapp3.1\PersonnelASPnetCore.Domaine.AssemblyInfo.cs
 D:\HAITHEM\source\AzureDevOps\ADVICE_NetCore\PersonnelASPnetCore.Domaine\obj\Debug\netcoreapp3.1\PersonnelASPnetCore.Domaine.dll
 D:\HAITHEM\source\AzureDevOps\ADVICE_NetCore\PersonnelASPnetCore.Domaine\obj\Debug\netcoreapp3.1\PersonnelASPnetCore.Domaine.pdb
+E:\repo\ADVICE_BackEnd\PersonnelASPnetCore.Domaine\bin\Debug\netcoreapp3.1\PersonnelASPnetCore.Domaine.deps.json
+E:\repo\ADVICE_BackEnd\PersonnelASPnetCore.Domaine\bin\Debug\netcoreapp3.1\PersonnelASPnetCore.Domaine.runtimeconfig.json
+E:\repo\ADVICE_BackEnd\PersonnelASPnetCore.Domaine\bin\Debug\netcoreapp3.1\PersonnelASPnetCore.Domaine.runtimeconfig.dev.json
+E:\repo\ADVICE_BackEnd\PersonnelASPnetCore.Domaine\bin\Debug\netcoreapp3.1\PersonnelASPnetCore.Domaine.dll
+E:\repo\ADVICE_BackEnd\PersonnelASPnetCore.Domaine\bin\Debug\netcoreapp3.1\PersonnelASPnetCore.Domaine.pdb
+E:\repo\ADVICE_BackEnd\PersonnelASPnetCore.Domaine\obj\Debug\netcoreapp3.1\PersonnelASPnetCore.Domaine.csprojAssemblyReference.cache
+E:\repo\ADVICE_BackEnd\PersonnelASPnetCore.Domaine\obj\Debug\netcoreapp3.1\PersonnelASPnetCore.Domaine.AssemblyInfoInputs.cache
+E:\repo\ADVICE_BackEnd\PersonnelASPnetCore.Domaine\obj\Debug\netcoreapp3.1\PersonnelASPnetCore.Domaine.AssemblyInfo.cs
+E:\repo\ADVICE_BackEnd\PersonnelASPnetCore.Domaine\obj\Debug\netcoreapp3.1\PersonnelASPnetCore.Domaine.dll
+E:\repo\ADVICE_BackEnd\PersonnelASPnetCore.Domaine\obj\Debug\netcoreapp3.1\PersonnelASPnetCore.Domaine.pdb

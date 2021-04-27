@@ -8868,11 +8868,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\HAITHEM\\source\\AzureDevOps\\ADVICE_NetCore\\PersonnelASPnetCore.Service\\PersonnelASPnetCore.Service.csproj",
+      "projectUniqueName": "E:\\repo\\ADVICE_BackEnd\\PersonnelASPnetCore.Service\\PersonnelASPnetCore.Service.csproj",
       "projectName": "PersonnelASPnetCore.Service",
-      "projectPath": "D:\\HAITHEM\\source\\AzureDevOps\\ADVICE_NetCore\\PersonnelASPnetCore.Service\\PersonnelASPnetCore.Service.csproj",
+      "projectPath": "E:\\repo\\ADVICE_BackEnd\\PersonnelASPnetCore.Service\\PersonnelASPnetCore.Service.csproj",
       "packagesPath": "C:\\Users\\HAITHEM\\.nuget\\packages\\",
-      "outputPath": "D:\\HAITHEM\\source\\AzureDevOps\\ADVICE_NetCore\\PersonnelASPnetCore.Service\\obj\\",
+      "outputPath": "E:\\repo\\ADVICE_BackEnd\\PersonnelASPnetCore.Service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -8893,11 +8893,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\HAITHEM\\source\\AzureDevOps\\ADVICE_NetCore\\PersonnelASPnetCore.Data\\PersonnelASPnetCore.Data.csproj": {
-              "projectPath": "D:\\HAITHEM\\source\\AzureDevOps\\ADVICE_NetCore\\PersonnelASPnetCore.Data\\PersonnelASPnetCore.Data.csproj"
+            "E:\\repo\\ADVICE_BackEnd\\PersonnelASPnetCore.Data\\PersonnelASPnetCore.Data.csproj": {
+              "projectPath": "E:\\repo\\ADVICE_BackEnd\\PersonnelASPnetCore.Data\\PersonnelASPnetCore.Data.csproj"
             },
-            "D:\\HAITHEM\\source\\AzureDevOps\\ADVICE_NetCore\\PersonnelASPnetCore.Domaine\\PersonnelASPnetCore.Domaine.csproj": {
-              "projectPath": "D:\\HAITHEM\\source\\AzureDevOps\\ADVICE_NetCore\\PersonnelASPnetCore.Domaine\\PersonnelASPnetCore.Domaine.csproj"
+            "E:\\repo\\ADVICE_BackEnd\\PersonnelASPnetCore.Domaine\\PersonnelASPnetCore.Domaine.csproj": {
+              "projectPath": "E:\\repo\\ADVICE_BackEnd\\PersonnelASPnetCore.Domaine\\PersonnelASPnetCore.Domaine.csproj"
             }
           }
         }

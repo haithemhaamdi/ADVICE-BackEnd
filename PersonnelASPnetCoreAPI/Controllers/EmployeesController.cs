@@ -18,7 +18,7 @@ using PersonnelASPnetCore.Dto.ROLE_Dto;
 
 namespace PersonnelASPnetCoreAPI.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [Produces("application/json")]
     [ApiController]
     [Route("api/[controller]")]
@@ -51,7 +51,7 @@ namespace PersonnelASPnetCoreAPI.Controllers
         }
         #endregion
 
-        //[Authorize(Roles = Role.Admin)]
+        [Authorize(Roles = Role.Admin)]
         [HttpGet()]
         public ActionResult<IEnumerable<EMPLOYEdto>> Get()
         {
@@ -63,7 +63,7 @@ namespace PersonnelASPnetCoreAPI.Controllers
             return Ok(_mapper.Map<IEnumerable<EmployeResponseDto>>(EmployeesFromRepo));
         }
 
-        //[Authorize(Roles = Role.Admin)]
+        [Authorize(Roles = Role.Admin)]
         [HttpGet("{codeEmp}")]
         public IActionResult Get(string codeEmp)
         {
@@ -96,7 +96,8 @@ namespace PersonnelASPnetCoreAPI.Controllers
                 _loggerController.LogWarning($"Employee with id: {codeEmp}, hasn't been found in db.");
                 return NotFound();
             }
-            return Ok(_mapper.Map<IEnumerable<EmployeResponseDto>>(EmployeeFromRepo));
+            //return Ok(_mapper.Map<IEnumerable<EmployeResponseDto>>(EmployeeFromRepo));
+            return Ok(EmployeeFromRepo);
         }
 
         //[HttpGet("{codeEmp}", Name = "GetEmployee")]
@@ -132,6 +133,7 @@ namespace PersonnelASPnetCoreAPI.Controllers
         //    return Ok(_mapper.Map<IEnumerable<EMPLOYEdto>>(EmployeeFromRepo));
         //}
 
+        [Authorize(Roles = Role.AdministratorOrUser)]
         [HttpPost]
         public IActionResult Post([FromBody]EMPLOYE employe)
         {
@@ -139,6 +141,7 @@ namespace PersonnelASPnetCoreAPI.Controllers
             return Ok(); ;
         }
 
+        [Authorize(Roles = Role.Admin)]
         [HttpPut]
         public IActionResult Put(string codeEmp, [FromBody]EMPLOYE employe)
         {
@@ -146,6 +149,7 @@ namespace PersonnelASPnetCoreAPI.Controllers
             return Ok();
         }
 
+        [Authorize(Roles = Role.Admin)]
         [HttpDelete]
         public IActionResult Delete(string codeEmp)
         {
