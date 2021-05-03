@@ -102,7 +102,7 @@ namespace PersonnelASPnetCoreAPI.Controllers
         }
 
         // GET: api/Users/5
-        [Authorize(Roles = Role.AdministratorOrUser)]
+        [Authorize(Roles = Role.Admin)]
         [HttpGet("{codeEmploye}")]
         public async Task<IActionResult> Get([FromRoute]string codeEmploye)
         {
@@ -139,7 +139,7 @@ namespace PersonnelASPnetCoreAPI.Controllers
             var dateNow = DateTime.Now;
             addUserDto.connections = 0;
             addUserDto.status = false;
-            addUserDto.macAddress = "127.0.0.1";
+            addUserDto.macAddress = GetMACAddress().ToString();
             addUserDto.createDate = dateNow;
             addUserDto.modifyDate = dateNow;
 
@@ -167,7 +167,7 @@ namespace PersonnelASPnetCoreAPI.Controllers
         }
 
         // PUT: api/Users/5
-        [Authorize(Roles = Role.User)]
+        [Authorize(Roles = Role.Admin)]
         [HttpPut("{codeEmploye}")]
         public async Task<IActionResult> Put([FromRoute]string codeEmploye, [FromBody]EditUserDto editUserDto)
         {
@@ -248,96 +248,104 @@ namespace PersonnelASPnetCoreAPI.Controllers
         public IActionResult Authenticate([FromBody]AuthenticateRequestDto model)
         {
 
-            var user = _userRepo.Authenticate(model.username, Helper.base64Encode(model.password), GetIpAddress(), model.message, model.isAuthenticated, model.isDisconnected);
-            if (user == null)
+            
+                var user = _userRepo.Authenticate(model.username, Helper.base64Encode(model.password), GetIpAddress(), model.message, model.isAuthenticated, model.isDisconnected, model.flag);
+
+            if (user == null || user.Flag == true)
             {
                 model.isAuthenticated = false;
+
+
                 //model.message = $"Incorrect Credentials for user {model.username}.";
                 //return BadRequest(new { message = "Username or password is incorrect" });
-                return BadRequest(model.message);
+                return BadRequest(new { message = user.Message });
+                //return BadRequest(model.message);
             }
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
-            var _role = _roleRepo.GetRoleByUserCodePS(user.CodeEmploye).Result.Name;
-            _userRepo.IncrementConnectionPS(user.CodeEmploye, user.Connections);
-            _userRepo.ChecKActiveToken(model.RevokeAll = false);
-
-            setTokenCookie(user.RefreshToken);
-
-            var tokenDescriptor = new SecurityTokenDescriptor
+            else
             {
-                Subject = new ClaimsIdentity(new Claim[]
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+                var _role = _roleRepo.GetRoleByUserCodePS(user.CodeEmploye).Result.Name;
+                _userRepo.IncrementConnectionPS(user.CodeEmploye, user.Connections);
+                _userRepo.ChecKActiveToken(model.RevokeAll = false);
+
+                setTokenCookie(user.RefreshToken);
+
+                var tokenDescriptor = new SecurityTokenDescriptor
                 {
+                    Subject = new ClaimsIdentity(new Claim[]
+                    {
                     new Claim(ClaimTypes.Name, user.CodeEmploye.ToString()),
                     new Claim(ClaimTypes.Role, _role.ToString())
-                }),
-                Expires = DateTime.Now.AddMinutes(10),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
-            };
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            var tokenString = tokenHandler.WriteToken(token);
+                    }),
+                    Expires = DateTime.Now.AddMinutes(5),
+                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                };
+                var token = tokenHandler.CreateToken(tokenDescriptor);
+                var tokenString = tokenHandler.WriteToken(token);
 
-            model.isAuthenticated = true;
-            model.message = "Authenticate Successfully";
-            model.isDisconnected = false;
+                model.isAuthenticated = true;
+                model.message = "Authenticate Successfully !";
+                model.isDisconnected = false;
 
 
-            try
-            {
-                UserTokenDto _userTokenDto = new UserTokenDto();
-                var preUsertoSaveToken = _mapper.Map<USER>(_userTokenDto);
-                user.Token = tokenString;
-                _userTokenDto.CodeEmploye = user.CodeEmploye;
-                _userTokenDto.Token = tokenString;
-                _userRepo.UpdateUserTokenPS(preUsertoSaveToken, _userTokenDto.CodeEmploye, _userTokenDto.Token);
-                _userRepo.SaveAsync(preUsertoSaveToken);
+                try
+                {
+                    UserTokenDto _userTokenDto = new UserTokenDto();
+                    var preUsertoSaveToken = _mapper.Map<USER>(_userTokenDto);
+                    user.Token = tokenString;
+                    _userTokenDto.CodeEmploye = user.CodeEmploye;
+                    _userTokenDto.Token = tokenString;
+                    _userRepo.UpdateUserTokenPS(preUsertoSaveToken, _userTokenDto.CodeEmploye, _userTokenDto.Token);
+                    _userRepo.SaveAsync(preUsertoSaveToken);
+                }
+                catch (AppException ex)
+                {
+                    // return error message if there was an exception
+                    return BadRequest(new { message = ex.Message });
+                }
+
+                //Alimenter la table connexion_history
+                AddConnectionHistoryDto addConnectionHistoryDto = new AddConnectionHistoryDto();
+
+                var dateDate = DateTime.Now;
+
+                addConnectionHistoryDto.CodeEmploye = user.CodeEmploye;
+                addConnectionHistoryDto.Username = user.Username;
+                addConnectionHistoryDto.FirstName = user.FirstName;
+                addConnectionHistoryDto.LastName = user.LastName;
+                addConnectionHistoryDto.Role = _role;
+                addConnectionHistoryDto.Connections = user.Connections + 1;
+                addConnectionHistoryDto.SignInDate = dateDate;
+                addConnectionHistoryDto.Hostname = Dns.GetHostName();
+                addConnectionHistoryDto.MacAddress = GetMACAddress();
+                addConnectionHistoryDto.IpAddress = GetIpAddress();
+
+
+                var preConnectionHistory = _mapper.Map<CONNECTIONS_HISTORY>(addConnectionHistoryDto);
+
+                _connHistoryRepo.ConnectionHistoryPSAsync(preConnectionHistory);
+                _connHistoryRepo.SaveAsync(preConnectionHistory);
+
+                // return basic user info and authentication token
+                return Ok(new
+                {
+                    Id = user.CodeEmploye,
+                    Username = user.Username,
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
+                    AdresseMail = user.AdresseMail,
+                    Role = _role,
+                    Token = tokenString,
+                    AuthData = user.AuthData,
+                    Picture_URL = user.Picture_URL,
+                    Picture = user.Picture,
+                    IsAuthenticated = user.IsAuthenticated,
+                    IsDisconnected = user.IsDisconnected,
+                    Message = user.Message,
+
+                });
             }
-            catch (AppException ex)
-            {
-                // return error message if there was an exception
-                return BadRequest(new { message = ex.Message });
-            }
-
-            //Alimenter la table connexion_history
-            AddConnectionHistoryDto addConnectionHistoryDto = new AddConnectionHistoryDto();
-            var dateDate = DateTime.Now;
-            int result = 2000000000 + (dateDate.Month * 1000000) + (dateDate.Day * 10000) + (dateDate.Hour * 100) + (dateDate.Minute * 1);
-            addConnectionHistoryDto.Id = result;
-            addConnectionHistoryDto.CodeEmploye = user.CodeEmploye;
-            addConnectionHistoryDto.Username = user.Username;
-            addConnectionHistoryDto.FirstName = user.FirstName;
-            addConnectionHistoryDto.LastName = user.LastName;
-            addConnectionHistoryDto.Role = _role;
-            addConnectionHistoryDto.Connections = user.Connections + 1;
-            addConnectionHistoryDto.SignInDate = dateDate;
-            addConnectionHistoryDto.SignOutDate = dateDate;
-            addConnectionHistoryDto.Hostname = Dns.GetHostName();
-            addConnectionHistoryDto.MacAddress = GetMACAddress();
-            addConnectionHistoryDto.IpAddress = GetIpAddress();
-
-
-            var preConnectionHistory = _mapper.Map<CONNECTIONS_HISTORY>(addConnectionHistoryDto);
-
-            _connHistoryRepo.ConnectionHistoryPSAsync(preConnectionHistory);
-            _connHistoryRepo.SaveAsync(preConnectionHistory);
-
-            // return basic user info and authentication token
-            return Ok(new
-            {
-                Id = user.CodeEmploye,
-                Username = user.Username,
-                FirstName = user.FirstName,
-                LastName = user.LastName,
-                AdresseMail = user.AdresseMail,
-                Role = _role,
-                Token = tokenString,
-                AuthData = user.AuthData,
-                Picture_URL = user.Picture_URL,
-                Picture = user.Picture,
-                IsAuthenticated = user.IsAuthenticated,
-                IsDisconnected = user.IsDisconnected,
-
-        });
         }
 
         // POST: api/Users/register
@@ -357,9 +365,13 @@ namespace PersonnelASPnetCoreAPI.Controllers
             addUserDto.codeRole = "R001";
             addUserDto.createDate = dateNow;
             addUserDto.modifyDate = dateNow;
+            addUserDto.picture_URL = "09.png";
+            addUserDto.login = addUserDto.username;
+            addUserDto.AdresseMail = (addUserDto.firstName).ToLower() + "." + (addUserDto.lastName).ToLower() + "@advice.net";
             addUserDto.macAddress = GetMACAddress().ToString();
             addUserDto.IpAddress = GetIpAddress().ToString();
-
+            addUserDto.IsDisconnected = true;
+            addUserDto.IsAuthenticated = false;
 
             #endregion
 
@@ -386,11 +398,44 @@ namespace PersonnelASPnetCoreAPI.Controllers
         [HttpPost("logout")]
         public IActionResult Logout([FromBody]LogOutDto logOutDto)
         {
+            updateConnectionHistoryDto updateConnectionHistoryDto = new updateConnectionHistoryDto();
+            try
+            {
+                updateConnectionHistoryDto.CodeEmploye = logOutDto.CodeEmploye;
+                updateConnectionHistoryDto.SignOutDate = null;
+
+                var preUserSaveConnectionHistory = _mapper.Map<CONNECTIONS_HISTORY>(updateConnectionHistoryDto);
+
+                //_connHistoryRepo.UpdateUserConnectionHistoryPS(preUserSaveConnectionHistory, preUserSaveConnectionHistory.CodeEmploye, preUserSaveConnectionHistory.SignOutDate);
+
+                _connHistoryRepo.UpdateUserConnectionHistoryPS(logOutDto.CodeEmploye);
+
+
+                _connHistoryRepo.SaveAsync(preUserSaveConnectionHistory);
+            }
+            catch (AppException ex)
+            {
+                // return error message if there was an exception
+                return BadRequest(new { message = ex.Message });
+            }
+
+
             _userRepo.ChecKActiveToken(logOutDto.RevokeAll = true);
             _userRepo.RevokeToken(logOutDto.Token, GetIpAddress());
             HttpContext.Session.Clear();
             return Ok();
         }
+
+        //[AllowAnonymous]
+        //[HttpPost("logout")]
+        //public IActionResult Logout([FromBody]LogOutDto logOutDto)
+        //{
+        //    _userRepo.ChecKActiveToken(logOutDto.RevokeAll = true);
+        //    _userRepo.RevokeToken(logOutDto.Token, GetIpAddress());
+        //    HttpContext.Session.Clear();
+        //    return Ok();
+        //}
+
 
         private string GetIpAddress()
         {
@@ -497,7 +542,7 @@ namespace PersonnelASPnetCoreAPI.Controllers
             var cookieOptions = new CookieOptions
             {
                 HttpOnly = true,
-                Expires = DateTime.Now.AddMinutes(2)
+                Expires = DateTime.Now.AddMinutes(5)
             };
             Response.Cookies.Append("refreshToken", token, cookieOptions);
         }

@@ -32,24 +32,50 @@ namespace PersonnelASPnetCore.Dto.USER_Dto
 
         public bool IsDisconnected { get; set; }
 
+        public bool Flag { get; set; }
 
-        public AuthenticateResponseDto(USER user, string jwtToken, string refreshToken, DateTime refreshTokenExpiration, string message,bool isAuthenticated, bool isDisconnected)
+        public AuthenticateResponseDto(USER user, string jwtToken, string refreshToken, DateTime refreshTokenExpiration, string message, bool isAuthenticated, bool isDisconnected, bool flag)
         {
-            CodeEmploye = user.CodeEmploye;
-            FirstName = user.FirstName;
-            LastName = user.LastName;
-            Username = user.Username;
-            AdresseMail = user.AdresseMail;
-            Picture = user.Picture;
-            Picture_URL = user.Picture_URL;
-            Connections = user.Connections;
-            Token = jwtToken;
-            AuthData = user.AuthData;
-            RefreshToken = refreshToken;
-            RefreshTokenExpiration = refreshTokenExpiration;
-            Message = message;
-            IsAuthenticated = isAuthenticated;
-            IsDisconnected = isDisconnected;
+            if (user == null)
+            {
+                CodeEmploye = "";
+                FirstName = "";
+                LastName = "";
+                Username = "";
+                AdresseMail = "";
+                Picture = null;
+                Picture_URL = "";
+                Connections = 0;
+                Token = "";
+                AuthData = "";
+                RefreshToken = "";
+                RefreshTokenExpiration = new DateTime();
+                Message = message;
+                IsAuthenticated = isAuthenticated;
+                IsDisconnected = isDisconnected;
+                Flag = true;
+            }
+            else
+            {
+
+                CodeEmploye = user.CodeEmploye;
+                FirstName = user.FirstName;
+                LastName = user.LastName;
+                Username = user.Username;
+                AdresseMail = user.AdresseMail;
+                Picture = user.Picture;
+                Picture_URL = user.Picture_URL;
+                Connections = user.Connections;
+                Token = jwtToken;
+                AuthData = user.AuthData;
+                RefreshToken = refreshToken;
+                RefreshTokenExpiration = refreshTokenExpiration;
+                Message = message;
+                IsAuthenticated = isAuthenticated;
+                IsDisconnected = isDisconnected;
+                Flag = false;
+
+            }
         }
     }
 }

@@ -200,7 +200,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CodeEmploye" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="Username" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="FirstName" Type="varchar" MaxLength="10" Nullable="false" />
@@ -966,7 +966,7 @@ warning 6002: The table/view 'ARTIPERSONNEL_SOC001.dbo.IMP_FICHE_ANNUELLE_PAIE' 
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CodeEmploye" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="Token" Type="varchar(max)" />
           <Property Name="Expires" Type="datetime" />
@@ -1138,6 +1138,8 @@ warning 6002: The table/view 'ARTIPERSONNEL_SOC001.dbo.SITUATION_CONGE_SPECIAL' 
           <Property Name="AdresseMail" Type="varchar" MaxLength="50" />
           <Property Name="Picture_URL" Type="varchar(max)" />
           <Property Name="Picture" Type="varbinary(max)" />
+          <Property Name="IsAuthenticated" Type="bit" />
+          <Property Name="IsDisconnected" Type="bit" />
         </EntityType>
         <EntityType Name="VIREMENT">
           <Key>
@@ -2314,7 +2316,6 @@ warning 6002: The table/view 'ARTIPERSONNEL_SOC001.dbo.Vue_SoldeActuel_Conge' do
           <Parameter Name="RevokeAll" Type="bit" Mode="In" />
         </Function>
         <Function Name="PROC_CONNECTIONS_HISTORY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Id" Type="int" Mode="In" />
           <Parameter Name="CodeEmploye" Type="varchar" Mode="In" />
           <Parameter Name="Username" Type="varchar" Mode="In" />
           <Parameter Name="FirstName" Type="varchar" Mode="In" />
@@ -2445,13 +2446,17 @@ warning 6002: The table/view 'ARTIPERSONNEL_SOC001.dbo.Vue_SoldeActuel_Conge' do
           <Parameter Name="PasswordSalt" Type="varbinary(max)" Mode="In" />
           <Parameter Name="Login" Type="varchar" Mode="In" />
           <Parameter Name="Password" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="AdresseMail" Type="varchar" Mode="In" />
           <Parameter Name="Connections" Type="int" Mode="In" />
           <Parameter Name="MacAddress" Type="nvarchar(max)" Mode="In" />
           <Parameter Name="CreateDate" Type="datetime2" Mode="In" />
           <Parameter Name="ModifyDate" Type="datetime2" Mode="In" />
           <Parameter Name="Status" Type="bit" Mode="In" />
+          <Parameter Name="Picture_URL" Type="varchar(max)" Mode="In" />
           <Parameter Name="CodeRole" Type="varchar" Mode="In" />
           <Parameter Name="IpAddress" Type="varchar" Mode="In" />
+          <Parameter Name="IsDisconnected" Type="bit" Mode="In" />
+          <Parameter Name="IsAuthenticated" Type="bit" Mode="In" />
         </Function>
         <Function Name="PROC_DELETE_BULLETIN_PAIE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="NumeroBulletin" Type="varchar" Mode="In" />
@@ -2613,7 +2618,11 @@ warning 6002: The table/view 'ARTIPERSONNEL_SOC001.dbo.Vue_SoldeActuel_Conge' do
           <Parameter Name="MacAddress" Type="nvarchar(max)" Mode="In" />
           <Parameter Name="ModifyDate" Type="datetime2" Mode="In" />
           <Parameter Name="Status" Type="bit" Mode="In" />
+          <Parameter Name="Picture" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="Picture_URL" Type="varchar(max)" Mode="In" />
           <Parameter Name="CodeRole" Type="varchar" Mode="In" />
+          <Parameter Name="IsDisconnected" Type="bit" Mode="In" />
+          <Parameter Name="IsAuthenticated" Type="bit" Mode="In" />
         </Function>
         <Function Name="PROC_UPDATE_USER_TOKEN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CodeUser" Type="varchar" Mode="In" />
@@ -4395,6 +4404,8 @@ warning 6002: The table/view 'ARTIPERSONNEL_SOC001.dbo.Vue_SoldeActuel_Conge' do
           <Property Name="AdresseMail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Picture_URL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="IsAuthenticated" Type="Boolean" />
+          <Property Name="IsDisconnected" Type="Boolean" />
         </EntityType>
         <EntityType Name="VIREMENT">
           <Key>
@@ -6035,7 +6046,6 @@ warning 6002: The table/view 'ARTIPERSONNEL_SOC001.dbo.Vue_SoldeActuel_Conge' do
           <Parameter Name="RevokeAll" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="PROC_CONNECTIONS_HISTORY">
-            <Parameter Name="Id" Mode="In" Type="Int32" />
             <Parameter Name="CodeEmploye" Mode="In" Type="String" />
             <Parameter Name="Username" Mode="In" Type="String" />
             <Parameter Name="FirstName" Mode="In" Type="String" />
@@ -6166,13 +6176,17 @@ warning 6002: The table/view 'ARTIPERSONNEL_SOC001.dbo.Vue_SoldeActuel_Conge' do
             <Parameter Name="PasswordSalt" Mode="In" Type="Binary" />
             <Parameter Name="Login" Mode="In" Type="String" />
             <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="AdresseMail" Mode="In" Type="String" />
             <Parameter Name="Connections" Mode="In" Type="Int32" />
             <Parameter Name="MacAddress" Mode="In" Type="String" />
             <Parameter Name="CreateDate" Mode="In" Type="DateTime" />
             <Parameter Name="ModifyDate" Mode="In" Type="DateTime" />
             <Parameter Name="Status" Mode="In" Type="Boolean" />
+            <Parameter Name="Picture_URL" Mode="In" Type="String" />
             <Parameter Name="CodeRole" Mode="In" Type="String" />
             <Parameter Name="IpAddress" Mode="In" Type="String" />
+            <Parameter Name="IsDisconnected" Mode="In" Type="Boolean" />
+            <Parameter Name="IsAuthenticated" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="PROC_DELETE_BULLETIN_PAIE">
           <Parameter Name="NumeroBulletin" Mode="In" Type="String" />
@@ -6334,7 +6348,11 @@ warning 6002: The table/view 'ARTIPERSONNEL_SOC001.dbo.Vue_SoldeActuel_Conge' do
             <Parameter Name="MacAddress" Mode="In" Type="String" />
             <Parameter Name="ModifyDate" Mode="In" Type="DateTime" />
             <Parameter Name="Status" Mode="In" Type="Boolean" />
+            <Parameter Name="Picture" Mode="In" Type="Binary" />
+            <Parameter Name="Picture_URL" Mode="In" Type="String" />
             <Parameter Name="CodeRole" Mode="In" Type="String" />
+            <Parameter Name="IsDisconnected" Mode="In" Type="Boolean" />
+            <Parameter Name="IsAuthenticated" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="PROC_UPDATE_USER_TOKEN">
             <Parameter Name="CodeUser" Mode="In" Type="String" />
@@ -7556,6 +7574,8 @@ warning 6002: The table/view 'ARTIPERSONNEL_SOC001.dbo.Vue_SoldeActuel_Conge' do
           <EntitySetMapping Name="USER">
             <EntityTypeMapping TypeName="ARTIPERSONNEL_SOC001Model.USER">
               <MappingFragment StoreEntitySet="USER">
+                <ScalarProperty Name="IsDisconnected" ColumnName="IsDisconnected" />
+                <ScalarProperty Name="IsAuthenticated" ColumnName="IsAuthenticated" />
                 <ScalarProperty Name="Picture" ColumnName="Picture" />
                 <ScalarProperty Name="Picture_URL" ColumnName="Picture_URL" />
                 <ScalarProperty Name="AdresseMail" ColumnName="AdresseMail" />

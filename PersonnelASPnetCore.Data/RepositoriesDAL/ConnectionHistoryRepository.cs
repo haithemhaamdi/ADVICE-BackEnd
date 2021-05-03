@@ -38,7 +38,6 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
                 cmd.CommandType = CommandType.StoredProcedure;
                 try
                 {
-                    cmd.Parameters.AddWithValue("@Id", cONNECTIONS_HISTORY.Id);
                     cmd.Parameters.AddWithValue("@CodeEmploye", cONNECTIONS_HISTORY.CodeEmploye);
                     cmd.Parameters.AddWithValue("@Username", cONNECTIONS_HISTORY.Username);
                     cmd.Parameters.AddWithValue("@FirstName", cONNECTIONS_HISTORY.FirstName);
@@ -46,7 +45,6 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
                     cmd.Parameters.AddWithValue("@Role", cONNECTIONS_HISTORY.Role);
                     cmd.Parameters.AddWithValue("@Connections", cONNECTIONS_HISTORY.Connections);
                     cmd.Parameters.AddWithValue("@SignInDate", cONNECTIONS_HISTORY.SignInDate);
-                    cmd.Parameters.AddWithValue("@SignOutDate", cONNECTIONS_HISTORY.SignOutDate);
                     cmd.Parameters.AddWithValue("@Hostname", cONNECTIONS_HISTORY.Hostname);
                     cmd.Parameters.AddWithValue("@MacAddress", cONNECTIONS_HISTORY.MacAddress);
                     cmd.Parameters.AddWithValue("@IpAddress", cONNECTIONS_HISTORY.IpAddress);
@@ -100,11 +98,6 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
         public Task<T> FindByName(string name)
         {
             throw new NotImplementedException();
-        }
-
-        public async Task SaveAsync()
-        {
-            await _repositoryContext.SaveChangesAsync();
         }
 
         public async Task<T> SaveAsync(T entity)
@@ -169,6 +162,44 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
         }
 
         public void Save()
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task UpdateUserConnectionHistoryPS(string _codeEmploye)
+        {
+            var connectionString = _ConnectionString.GetSection("ConnectionStrings").GetSection("DefaultConnection").Value;
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("dbo.PROC_UPDATE_CONNECTIONS_HISTORY", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                try
+                {
+                    //on a bien récupérer le codeEmploye ?
+                    cmd.Parameters.AddWithValue("@CodeEmploye", _codeEmploye);
+                    con.Open();
+                    await cmd.ExecuteNonQueryAsync();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error in DB" + ex.Message);
+                }
+                con.Close();
+            }
+        }
+
+        public void Commit()
+        {
+            _repositoryContext.SaveChanges();
+        }
+
+        public void Dispose()
+        {
+            _repositoryContext.Dispose();
+        }
+
+        public Task SaveAsync()
         {
             throw new NotImplementedException();
         }

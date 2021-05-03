@@ -68,6 +68,10 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
                     User.CreateDate = Convert.ToDateTime(sdr["CreateDate"]);
                     User.Connections = Convert.ToInt32(sdr["Connections"]);
                     User.CodeRole = sdr["CodeRole"].ToString();
+                    User.Picture_URL = sdr["Picture_URL"].ToString();
+                    //Authentification status
+                    User.IsDisconnected = Convert.ToBoolean(sdr["IsDisconnected"]);
+                    User.IsAuthenticated = Convert.ToBoolean(sdr["IsAuthenticated"]);
 
                     //User.CodeRoleNavigation.Name = sdr["Name"].ToString();
                     //User.CodeEmployeNavigation.NomEmploye = sdr["NomEmploye"].ToString();
@@ -116,16 +120,21 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
                     User.Login = sdr["Login"].ToString();
                     User.Password = sdr["Password"].ToString();
                     User.MacAddress = sdr["MacAddress"].ToString();
+                    User.IpAddress = sdr["IpAddress"].ToString();
                     User.Status = Convert.ToBoolean(sdr["Status"]);
                     User.ModifyDate = Convert.ToDateTime(sdr["ModifyDate"]);
                     User.CreateDate = Convert.ToDateTime(sdr["CreateDate"]);
                     User.Connections = Convert.ToInt32(sdr["Connections"]);
                     User.CodeRole = sdr["CodeRole"].ToString();
+                    User.Picture_URL = sdr["Picture_URL"].ToString();
                     User.CodeEmploye = sdr["CodeEmploye"].ToString();
                     User.FirstName = sdr["FirstName"].ToString();
                     User.LastName = sdr["LastName"].ToString();
                     User.Username = sdr["Username"].ToString();
                     User.AuthData = sdr["AuthData"].ToString();
+                    //Authentification status
+                    User.IsDisconnected = Convert.ToBoolean(sdr["IsDisconnected"]);
+                    User.IsAuthenticated = Convert.ToBoolean(sdr["IsAuthenticated"]);
 
                     lstUsers.Add(User);
                 }
@@ -169,13 +178,19 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
                     cmd.Parameters.AddWithValue("@PasswordSalt", User.PasswordSalt);
                     cmd.Parameters.AddWithValue("@Login", User.Login);
                     cmd.Parameters.AddWithValue("@Password", User.Password);
+                    cmd.Parameters.AddWithValue("@AdresseMail", User.AdresseMail);
                     cmd.Parameters.AddWithValue("@Connections", 0);
                     cmd.Parameters.AddWithValue("@MacAddress", User.MacAddress);
                     cmd.Parameters.AddWithValue("@CreateDate", User.CreateDate);
                     cmd.Parameters.AddWithValue("@ModifyDate", User.ModifyDate);
                     cmd.Parameters.AddWithValue("@Status", User.Status);
+                    //cmd.Parameters.AddWithValue("@Picture", User.Picture);
+                    cmd.Parameters.AddWithValue("@Picture_URL", User.Picture_URL);
                     cmd.Parameters.AddWithValue("@CodeRole", User.CodeRole);
                     cmd.Parameters.AddWithValue("@IpAddress", User.IpAddress);
+                    //Authentification status
+                    cmd.Parameters.AddWithValue("@IsDisconnected", User.IsDisconnected);
+                    cmd.Parameters.AddWithValue("@IsAuthenticated", User.IsAuthenticated);
 
                     con.Open();
                     await cmd.ExecuteNonQueryAsync();
@@ -244,7 +259,12 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
                 cmd.Parameters.AddWithValue("@MacAddress", User.MacAddress);
                 cmd.Parameters.AddWithValue("@ModifyDate", User.ModifyDate);
                 cmd.Parameters.AddWithValue("@Status", User.Status);
+                cmd.Parameters.AddWithValue("@Picture", User.Picture);
+                cmd.Parameters.AddWithValue("@Picture_URL", User.Picture_URL);
                 cmd.Parameters.AddWithValue("@CodeRole", User.CodeRole);
+                //Authentification status
+                cmd.Parameters.AddWithValue("@IsDisconnected", User.IsDisconnected);
+                cmd.Parameters.AddWithValue("@IsAuthenticated", User.IsAuthenticated);
 
                 con.Open();
                 try
@@ -286,7 +306,11 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
                     User.CreateDate = Convert.ToDateTime(sdr["CreateDate"]);
                     User.Connections = Convert.ToInt32(sdr["Connections"]);
                     User.CodeRole = sdr["CodeRole"].ToString();
+                    User.Picture_URL = sdr["Picture_URL"].ToString();
                     User.CodeEmploye = sdr["CodeEmploye"].ToString();
+                    //Authentification status
+                    User.IsDisconnected = Convert.ToBoolean(sdr["IsDisconnected"]);
+                    User.IsAuthenticated = Convert.ToBoolean(sdr["IsAuthenticated"]);
                 }
             }
             return User;
@@ -360,6 +384,9 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
                         User.Connections = Convert.ToInt32(sdr["Connections"]);
                         User.CodeRole = sdr["CodeRole"].ToString();
                         User.AuthData = sdr["AuthData"].ToString();
+                        //Authentification status
+                        User.IsDisconnected = Convert.ToBoolean(sdr["IsDisconnected"]);
+                        User.IsAuthenticated = Convert.ToBoolean(sdr["IsAuthenticated"]);
                     }
                 }
                 catch (Exception ex)
@@ -389,7 +416,7 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
 
         public AuthenticateResponseDto Authenticate(
             string username, string password,
-            string ipAddress, string message, bool isAuthenticated, bool isDisconnected)
+            string ipAddress, string message, bool isAuthenticated, bool isDisconnected ,bool flag)
         {
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
@@ -402,13 +429,19 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
                 isAuthenticated = false;
                 isDisconnected = true;
                 message = $"No Accounts Registered with {username}.";
-                return null;
+                return new AuthenticateResponseDto(null, "", "", new DateTime(), message, false, true, true);                
             }
             // check if password is correct
-            if (!VerifyPasswordHash(Helper.Helper.base64Decode(password), user.PasswordHash, user.PasswordSalt))
-                return null;
+            if (!VerifyPasswordHash(Helper.Helper.base64Decode(password), user.PasswordHash, user.PasswordSalt)) {
+                message = $"Password is incorrect";
+                return new AuthenticateResponseDto(null, "", "", new DateTime(), message, false, true,true);
+            }
             isAuthenticated = true;
             isDisconnected = false;
+            message = $"Authenticate Successfully with {username}.";
+
+            user.IsAuthenticated = isAuthenticated;
+            user.IsDisconnected = isDisconnected;
 
             // authentication successful so generate jwt and refresh tokens
 
@@ -428,7 +461,7 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
             _repositoryContext.SaveChanges();
 
             //return user;
-            return new AuthenticateResponseDto(user, user.Token, refreshToken.Token, refreshToken.Expires.Value, "Token refreshed", true,false);
+            return new AuthenticateResponseDto(user, user.Token, refreshToken.Token, refreshToken.Expires.Value, message, true,false,flag);
         }
 
         private static void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
@@ -496,7 +529,7 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
             // generate new jwt
             var jwtToken = generateJwtToken(user);
 
-            return new AuthenticateResponseDto(user, jwtToken, newRefreshToken.Token, newRefreshToken.Expires.Value, "Token refreshed", true, false);
+            return new AuthenticateResponseDto(user, jwtToken, newRefreshToken.Token, newRefreshToken.Expires.Value, "Token refreshed", true, false, false);
         }
         public bool RevokeToken(string token, string ipAddress)
         {
@@ -521,7 +554,11 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
             refreshToken.IsActive = false;
             refreshToken.IsExpired = true;
             //ChecKActiveToken(true);
-            
+
+            //Authentification status
+            user.IsAuthenticated = false;
+            user.IsDisconnected = true;
+
             _repositoryContext.Update(user);
             _repositoryContext.SaveChanges();
             return true;
@@ -537,7 +574,7 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
                 {
                     new Claim(ClaimTypes.Name, user.CodeEmploye.ToString())
                 }),
-                Expires = DateTime.Now.AddMinutes(2),
+                Expires = DateTime.Now.AddMinutes(5),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
@@ -551,13 +588,11 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
                 var randomBytes = new byte[64];
                 rngCryptoServiceProvider.GetBytes(randomBytes);
                 var dateDate = DateTime.Now;
-                int result = 2000000000 + (dateDate.Month * 1000000) + (dateDate.Day * 10000) + (dateDate.Hour * 100) + (dateDate.Minute * 1);
-                var expireDate = DateTime.Now.AddMinutes(2);
+                var expireDate = DateTime.Now.AddMinutes(5);
 
 
                 return new REFRESH_TOKEN
                 {
-                    Id = result,
                     Token = Convert.ToBase64String(randomBytes),
                     Expires = expireDate,
                     Created = DateTime.Now,

@@ -17,6 +17,7 @@ namespace PersonnelASPnetCore.Dto.USER_Dto
         public bool isDisconnected { get; set; }
         public string message { get; set; }
 
+        public bool flag { get; set; }
         //public string message => isAuthenticated == false ? message : "Authenticate failed";
 
         public bool RevokeAll { get; set; }

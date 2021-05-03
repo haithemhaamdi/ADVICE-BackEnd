@@ -14,6 +14,7 @@ namespace PersonnelASPnetCore.Dto.USER_Dto
         //public string Password { get; set; }
         public int Connections { get; set; }
         public string MacAddress { get; set; }
+        public string IpAddress { get; set; }
         public DateTime? CreateDate { get; set; }
         public DateTime? ModifyDate { get; set; }
         public bool Status { get; set; }

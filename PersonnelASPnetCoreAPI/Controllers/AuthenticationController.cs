@@ -80,22 +80,7 @@ namespace PersonnelASPnetCoreAPI.Controllers
             return response;
         }
 
-        //public IActionResult Post([FromBody]USER login)
-        //{
-        //    IActionResult response = Unauthorized();
-        //    USER user = AuthenticateUser(login);
-        //    if (user != null)
-        //    {
-        //        var tokenString = GenerateJWTToken(user);
-        //        //var tokenString = GenerateJSONWebToken(user);     
-        //        response = Ok(new
-        //        {
-        //            token = tokenString,
-        //            userDetails = user,
-        //        });
-        //    }
-        //    return response;
-        //}
+
 
         USER AuthenticateUser(string userLogin, string userpassword)
         {
@@ -106,14 +91,6 @@ namespace PersonnelASPnetCoreAPI.Controllers
             return user;
         }
 
-        //USER AuthenticateUser(USER loginCredentials)
-        //{
-        //    var appUsers = _userRepo.GetAllUsersPS();
-
-        //    //sachant que le mot de passe est chiffré , il faur le déchiffré et l'utilisé
-        //    USER user = appUsers.SingleOrDefault(x => x.Login == loginCredentials.Login && x.Password == Helper.base64Encode(loginCredentials.Password));
-        //    return user;
-        //}
 
         string GenerateJWTToken(USER userInfo)
         {
@@ -137,7 +114,7 @@ namespace PersonnelASPnetCoreAPI.Controllers
             issuer: _config["Jwt:Issuer"],
             audience: _config["Jwt:Audience"],
             claims: claims,
-            expires: DateTime.Now.AddMinutes(2),
+            expires: DateTime.Now.AddMinutes(5),
             signingCredentials: credentials
             );
 
@@ -164,23 +141,11 @@ namespace PersonnelASPnetCoreAPI.Controllers
             var token = new JwtSecurityToken(_config["Jwt:Issuer"],
               _config["Jwt:Issuer"],
               null,
-              expires: DateTime.Now.AddSeconds(500),
+              expires: DateTime.Now.AddMinutes(5),
               signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        private USER AuthenticateUsers(USER userLogin)
-        {
-            USER user = null;
-
-            //Validate the User Credentials  
-            //Demo Purpose, I have Passed HardCoded User Information  
-            if (userLogin.Login == "Abc")
-            {
-                user = new USER { Login = "Abc Xyz", Password = "12345" };
-            }
-            return user;
-        }
     }
 }

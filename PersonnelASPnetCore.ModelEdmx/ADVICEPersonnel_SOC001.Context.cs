@@ -232,12 +232,8 @@ namespace PersonnelASPnetCore.ModelEdmx
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PROC_CHECK_ISACTIVE_TOKEN", revokeAllParameter);
         }
     
-        public virtual int PROC_CONNECTIONS_HISTORY(Nullable<int> id, string codeEmploye, string username, string firstName, string lastName, string role, Nullable<int> connections, Nullable<System.DateTime> signInDate, Nullable<System.DateTime> signOutDate, string hostname, string macAddress, string ipAddress)
+        public virtual int PROC_CONNECTIONS_HISTORY(string codeEmploye, string username, string firstName, string lastName, string role, Nullable<int> connections, Nullable<System.DateTime> signInDate, Nullable<System.DateTime> signOutDate, string hostname, string macAddress, string ipAddress)
         {
-            var idParameter = id.HasValue ?
-                new ObjectParameter("Id", id) :
-                new ObjectParameter("Id", typeof(int));
-    
             var codeEmployeParameter = codeEmploye != null ?
                 new ObjectParameter("CodeEmploye", codeEmploye) :
                 new ObjectParameter("CodeEmploye", typeof(string));
@@ -282,7 +278,7 @@ namespace PersonnelASPnetCore.ModelEdmx
                 new ObjectParameter("IpAddress", ipAddress) :
                 new ObjectParameter("IpAddress", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PROC_CONNECTIONS_HISTORY", idParameter, codeEmployeParameter, usernameParameter, firstNameParameter, lastNameParameter, roleParameter, connectionsParameter, signInDateParameter, signOutDateParameter, hostnameParameter, macAddressParameter, ipAddressParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PROC_CONNECTIONS_HISTORY", codeEmployeParameter, usernameParameter, firstNameParameter, lastNameParameter, roleParameter, connectionsParameter, signInDateParameter, signOutDateParameter, hostnameParameter, macAddressParameter, ipAddressParameter);
         }
     
         public virtual int PROC_CREATE_BULLETIN_PAIE(string numeroBulletin, Nullable<System.DateTime> datePaye, string codePlan, string codePeriode, string libellePeriode, string codeTypePeriode, Nullable<int> jourBase, Nullable<int> heureBase, string codeModele, string codeModePaiement, string codeBanque, string libelleBanque, string codeEmploye, string nomEmploye, Nullable<bool> valide, Nullable<decimal> salaireBase, Nullable<decimal> salaireNet, string rIB, string cIN, string matriculeCNSS, string matriculeAssuranceGroupe, string notes, string codeOperateur, Nullable<System.DateTime> dateOperation, Nullable<bool> chefFamille, Nullable<int> nombrePersonneACharge, Nullable<decimal> totalDeduction, string codeDepartement, string libelleDepartement, string codeFonction, string libelleFonction, string codeGrille, string codeSituation, Nullable<bool> smig, Nullable<bool> imposable, Nullable<bool> cotisationSociale, Nullable<bool> assuranceGroupe, Nullable<bool> impotLiquidatif, Nullable<decimal> montantPlafondAssuranceGroupe, Nullable<decimal> montantRedevanceCompensation, string matriculeEmploye, Nullable<bool> redevanceCompensation, Nullable<decimal> montantCavis, Nullable<bool> cavis, Nullable<decimal> soldeConge, string codeTypeContrat, Nullable<decimal> arrondissementPositif, Nullable<decimal> arrondissementNegatif)
@@ -715,7 +711,7 @@ namespace PersonnelASPnetCore.ModelEdmx
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PROC_CREATE_EMPLOYE", codeEmployeParameter, matriculeEmployeParameter, codeAppellationParameter, nomEmployeParameter, cinParameter, dateCinParameter, passeportParameter, datePasseportParameter, dateEntreeParameter, dateSortieParameter, codeFonctionParameter, codeDepartementParameter, salaireBaseParameter, tauxHoraireParameter, codeGrilleParameter, codeSituationParameter, dateSituationParameter, chefFamilleParameter, congeAnnuelParameter, congeAnterieurParameter, matriculeSecuriteSocialeParameter, matriculeAssuranceGroupeParameter, numeroPermisConduiteParameter, codeModePaiementParameter, codeBanqueParameter, agenceBanqueParameter, ribParameter, dateNaissanceParameter, lieuNaissanceParameter, adresseParameter, villeParameter, codePostalParameter, telephone1Parameter, telephone2Parameter, adresseMailParameter, nationaliteParameter, photoEmployeParameter, taillePhotoParameter, codeOperateurParameter, dateModificationParameter, codePlanParameter, notesParameter, codeNaturePaiementParameter, tauxJournalierParameter, imposableParameter, cotisationSocialeParameter, assuranceGroupeParameter, impotLiquidatifParameter, smigParameter, redevanceCompensationParameter, montantPlafondAssuranceGroupeParameter, imposableAnterieurParameter, impotAnterieurParameter, anneeImpotAnterieurParameter, cavisParameter, suffixeParameter, situationFamilialleParameter);
         }
     
-        public virtual int PROC_CREATE_USER(string codeUser, string username, string firstName, string lastName, byte[] passwordHash, byte[] passwordSalt, string login, string password, Nullable<int> connections, string macAddress, Nullable<System.DateTime> createDate, Nullable<System.DateTime> modifyDate, Nullable<bool> status, string codeRole, string ipAddress)
+        public virtual int PROC_CREATE_USER(string codeUser, string username, string firstName, string lastName, byte[] passwordHash, byte[] passwordSalt, string login, string password, string adresseMail, Nullable<int> connections, string macAddress, Nullable<System.DateTime> createDate, Nullable<System.DateTime> modifyDate, Nullable<bool> status, string picture_URL, string codeRole, string ipAddress, Nullable<bool> isDisconnected, Nullable<bool> isAuthenticated)
         {
             var codeUserParameter = codeUser != null ?
                 new ObjectParameter("CodeUser", codeUser) :
@@ -749,6 +745,10 @@ namespace PersonnelASPnetCore.ModelEdmx
                 new ObjectParameter("Password", password) :
                 new ObjectParameter("Password", typeof(string));
     
+            var adresseMailParameter = adresseMail != null ?
+                new ObjectParameter("AdresseMail", adresseMail) :
+                new ObjectParameter("AdresseMail", typeof(string));
+    
             var connectionsParameter = connections.HasValue ?
                 new ObjectParameter("Connections", connections) :
                 new ObjectParameter("Connections", typeof(int));
@@ -769,6 +769,10 @@ namespace PersonnelASPnetCore.ModelEdmx
                 new ObjectParameter("Status", status) :
                 new ObjectParameter("Status", typeof(bool));
     
+            var picture_URLParameter = picture_URL != null ?
+                new ObjectParameter("Picture_URL", picture_URL) :
+                new ObjectParameter("Picture_URL", typeof(string));
+    
             var codeRoleParameter = codeRole != null ?
                 new ObjectParameter("CodeRole", codeRole) :
                 new ObjectParameter("CodeRole", typeof(string));
@@ -777,7 +781,15 @@ namespace PersonnelASPnetCore.ModelEdmx
                 new ObjectParameter("IpAddress", ipAddress) :
                 new ObjectParameter("IpAddress", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PROC_CREATE_USER", codeUserParameter, usernameParameter, firstNameParameter, lastNameParameter, passwordHashParameter, passwordSaltParameter, loginParameter, passwordParameter, connectionsParameter, macAddressParameter, createDateParameter, modifyDateParameter, statusParameter, codeRoleParameter, ipAddressParameter);
+            var isDisconnectedParameter = isDisconnected.HasValue ?
+                new ObjectParameter("IsDisconnected", isDisconnected) :
+                new ObjectParameter("IsDisconnected", typeof(bool));
+    
+            var isAuthenticatedParameter = isAuthenticated.HasValue ?
+                new ObjectParameter("IsAuthenticated", isAuthenticated) :
+                new ObjectParameter("IsAuthenticated", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PROC_CREATE_USER", codeUserParameter, usernameParameter, firstNameParameter, lastNameParameter, passwordHashParameter, passwordSaltParameter, loginParameter, passwordParameter, adresseMailParameter, connectionsParameter, macAddressParameter, createDateParameter, modifyDateParameter, statusParameter, picture_URLParameter, codeRoleParameter, ipAddressParameter, isDisconnectedParameter, isAuthenticatedParameter);
         }
     
         public virtual int PROC_DELETE_BULLETIN_PAIE(string numeroBulletin)
@@ -1350,7 +1362,7 @@ namespace PersonnelASPnetCore.ModelEdmx
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PROC_UPDATE_Employe", codeEmployeParameter, matriculeEmployeParameter, codeAppellationParameter, nomEmployeParameter, cinParameter, dateCinParameter, passeportParameter, datePasseportParameter, dateEntreeParameter, dateSortieParameter, codeFonctionParameter, codeDepartementParameter, salaireBaseParameter, tauxHoraireParameter, codeGrilleParameter, codeSituationParameter, dateSituationParameter, chefFamilleParameter, congeAnnuelParameter, congeAnterieurParameter, matriculeSecuriteSocialeParameter, matriculeAssuranceGroupeParameter, numeroPermisConduiteParameter, codeModePaiementParameter, codeBanqueParameter, agenceBanqueParameter, ribParameter, dateNaissanceParameter, lieuNaissanceParameter, adresseParameter, villeParameter, codePostalParameter, telephone1Parameter, telephone2Parameter, adresseMailParameter, nationaliteParameter, photoEmployeParameter, taillePhotoParameter, codeOperateurParameter, dateModificationParameter, codePlanParameter, notesParameter, codeNaturePaiementParameter, tauxJournalierParameter, imposableParameter, cotisationSocialeParameter, assuranceGroupeParameter, impotLiquidatifParameter, smigParameter, redevanceCompensationParameter, montantPlafondAssuranceGroupeParameter, imposableAnterieurParameter, impotAnterieurParameter, anneeImpotAnterieurParameter, cavisParameter, suffixeParameter, situationFamilialleParameter);
         }
     
-        public virtual int PROC_UPDATE_USER(string codeUser, string firstName, string lastName, string username, string macAddress, Nullable<System.DateTime> modifyDate, Nullable<bool> status, string codeRole)
+        public virtual int PROC_UPDATE_USER(string codeUser, string firstName, string lastName, string username, string macAddress, Nullable<System.DateTime> modifyDate, Nullable<bool> status, byte[] picture, string picture_URL, string codeRole, Nullable<bool> isDisconnected, Nullable<bool> isAuthenticated)
         {
             var codeUserParameter = codeUser != null ?
                 new ObjectParameter("CodeUser", codeUser) :
@@ -1380,11 +1392,27 @@ namespace PersonnelASPnetCore.ModelEdmx
                 new ObjectParameter("Status", status) :
                 new ObjectParameter("Status", typeof(bool));
     
+            var pictureParameter = picture != null ?
+                new ObjectParameter("Picture", picture) :
+                new ObjectParameter("Picture", typeof(byte[]));
+    
+            var picture_URLParameter = picture_URL != null ?
+                new ObjectParameter("Picture_URL", picture_URL) :
+                new ObjectParameter("Picture_URL", typeof(string));
+    
             var codeRoleParameter = codeRole != null ?
                 new ObjectParameter("CodeRole", codeRole) :
                 new ObjectParameter("CodeRole", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PROC_UPDATE_USER", codeUserParameter, firstNameParameter, lastNameParameter, usernameParameter, macAddressParameter, modifyDateParameter, statusParameter, codeRoleParameter);
+            var isDisconnectedParameter = isDisconnected.HasValue ?
+                new ObjectParameter("IsDisconnected", isDisconnected) :
+                new ObjectParameter("IsDisconnected", typeof(bool));
+    
+            var isAuthenticatedParameter = isAuthenticated.HasValue ?
+                new ObjectParameter("IsAuthenticated", isAuthenticated) :
+                new ObjectParameter("IsAuthenticated", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PROC_UPDATE_USER", codeUserParameter, firstNameParameter, lastNameParameter, usernameParameter, macAddressParameter, modifyDateParameter, statusParameter, pictureParameter, picture_URLParameter, codeRoleParameter, isDisconnectedParameter, isAuthenticatedParameter);
         }
     
         public virtual int PROC_UPDATE_USER_TOKEN(string codeUser, string token)
