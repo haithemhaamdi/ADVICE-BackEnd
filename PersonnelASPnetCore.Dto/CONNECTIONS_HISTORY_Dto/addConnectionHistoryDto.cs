@@ -7,7 +7,6 @@ namespace PersonnelASPnetCore.Dto.CONNECTIONS_HISTORY_Dto
 {
     public class AddConnectionHistoryDto
     {
-        public int Id { get; set; }
         public string CodeEmploye { get; set; }
         public string Username { get; set; }
         public string FirstName { get; set; }

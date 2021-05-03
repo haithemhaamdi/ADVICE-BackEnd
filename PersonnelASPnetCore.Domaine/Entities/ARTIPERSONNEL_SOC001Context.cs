@@ -626,7 +626,7 @@ namespace PersonnelASPnetCore.Domaine.Entities
 
             modelBuilder.Entity<CONNECTIONS_HISTORY>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.CodeEmploye)
                     .IsRequired()
@@ -2686,8 +2686,6 @@ namespace PersonnelASPnetCore.Domaine.Entities
 
             modelBuilder.Entity<REFRESH_TOKEN>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
-
                 entity.Property(e => e.CodeEmploye)
                     .IsRequired()
                     .HasMaxLength(10)

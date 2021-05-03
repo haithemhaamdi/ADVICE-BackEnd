@@ -55,10 +55,7 @@ namespace PersonnelASPnetCore.Data.Helper
             CreateMap<EMPLOYE, EmployeResponseDto>().ReverseMap();
 
             CreateMap<AddConnectionHistoryDto, CONNECTIONS_HISTORY>().ReverseMap();
-
-
-            
-
+            CreateMap<updateConnectionHistoryDto, CONNECTIONS_HISTORY>().ReverseMap();
 
         }
     }

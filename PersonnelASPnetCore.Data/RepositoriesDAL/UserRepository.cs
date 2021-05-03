@@ -120,6 +120,7 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
                     User.Login = sdr["Login"].ToString();
                     User.Password = sdr["Password"].ToString();
                     User.MacAddress = sdr["MacAddress"].ToString();
+                    User.IpAddress = sdr["IpAddress"].ToString();
                     User.Status = Convert.ToBoolean(sdr["Status"]);
                     User.ModifyDate = Convert.ToDateTime(sdr["ModifyDate"]);
                     User.CreateDate = Convert.ToDateTime(sdr["CreateDate"]);
@@ -177,12 +178,13 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
                     cmd.Parameters.AddWithValue("@PasswordSalt", User.PasswordSalt);
                     cmd.Parameters.AddWithValue("@Login", User.Login);
                     cmd.Parameters.AddWithValue("@Password", User.Password);
+                    cmd.Parameters.AddWithValue("@AdresseMail", User.AdresseMail);
                     cmd.Parameters.AddWithValue("@Connections", 0);
                     cmd.Parameters.AddWithValue("@MacAddress", User.MacAddress);
                     cmd.Parameters.AddWithValue("@CreateDate", User.CreateDate);
                     cmd.Parameters.AddWithValue("@ModifyDate", User.ModifyDate);
                     cmd.Parameters.AddWithValue("@Status", User.Status);
-                    cmd.Parameters.AddWithValue("@Picture", User.Picture);
+                    //cmd.Parameters.AddWithValue("@Picture", User.Picture);
                     cmd.Parameters.AddWithValue("@Picture_URL", User.Picture_URL);
                     cmd.Parameters.AddWithValue("@CodeRole", User.CodeRole);
                     cmd.Parameters.AddWithValue("@IpAddress", User.IpAddress);
@@ -572,7 +574,7 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
                 {
                     new Claim(ClaimTypes.Name, user.CodeEmploye.ToString())
                 }),
-                Expires = DateTime.Now.AddSeconds(120),
+                Expires = DateTime.Now.AddMinutes(5),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
@@ -586,13 +588,11 @@ namespace PersonnelASPnetCore.Data.RepositoriesDAL
                 var randomBytes = new byte[64];
                 rngCryptoServiceProvider.GetBytes(randomBytes);
                 var dateDate = DateTime.Now;
-                int result = 2000000000 + (dateDate.Month * 1000000) + (dateDate.Day * 10000) + (dateDate.Hour * 100) + (dateDate.Minute * 1);
-                var expireDate = DateTime.Now.AddMinutes(2);
+                var expireDate = DateTime.Now.AddMinutes(5);
 
 
                 return new REFRESH_TOKEN
                 {
-                    Id = result,
                     Token = Convert.ToBase64String(randomBytes),
                     Expires = expireDate,
                     Created = DateTime.Now,

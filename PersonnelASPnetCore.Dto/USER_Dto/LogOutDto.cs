@@ -11,6 +11,9 @@ namespace PersonnelASPnetCore.Dto.USER_Dto
         public bool IsDisconnected { get; set; }
         public bool IsAuthenticated { get; set; }
 
+        //To get the code of employee when he want to logout.
+        public string CodeEmploye { get; set; }
+
 
     }
 }

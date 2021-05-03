@@ -32,6 +32,8 @@ namespace PersonnelASPnetCore.Dto.USER_Dto
         public string IpAddress { get; set; }
         public string picture_URL { get; set; }
         public byte[] picture { get; set; }
+        public bool IsAuthenticated { get; set; }
+        public bool IsDisconnected { get; set; }
 
     }
 }
